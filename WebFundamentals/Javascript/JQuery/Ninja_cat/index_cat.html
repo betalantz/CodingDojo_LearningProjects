@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>What the ninja?</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <style>
+            body {
+                background-color: black;
+            }
+            img {
+                display: block;
+                margin: 0;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('img').click(function(){
+                        var imgSrc = $(this).attr('src');
+                        $(this).attr('src', $(this).attr('alt'));
+                        $(this).attr('alt', imgSrc);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <img src="./img/ninja0.png" alt="./img/cat0.png" /img>
+        <img src="./img/ninja1.png" alt="./img/cat1.png" /img>
+        <img src="./img/ninja2.png" alt="./img/cat2.png" /img>
+        <img src="./img/ninja3.png" alt="./img/cat3.png" /img>
+        <img src="./img/ninja4.png" alt="./img/cat4.png" /img>
+    
+    </body>
+</html>

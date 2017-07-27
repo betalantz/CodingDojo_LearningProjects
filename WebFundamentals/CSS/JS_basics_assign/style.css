@@ -1,0 +1,78 @@
+/*CSS reset  */
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+    }
+
+.wrapper{
+    width: 970px;
+	background-color: #1F355B;
+	padding: 10px;
+}
+
+h1{
+    color: #c2d6eb	;
+	background-color: #BF3F3D;
+	padding: 20px;
+	font-size: 20pt;
+	font-weight: 600;
+	border-radius: 10px; 
+	margin-bottom: 20px;
+}
+.navigation{
+	width: 15%;
+	font-size: 85%;
+	background-color: #407B8A;
+	border-radius: 10px;
+	display: inline-block;
+	padding: 20px;
+	margin-right: 10px;
+}
+ul{
+	padding-left: 16px;
+	color: #c2d6eb	;
+}
+a{
+	color: #81D6E0;
+}
+
+.main_content{
+	width: 75%;
+	font-size: 85%;
+	color: #c2d6eb	;
+	background-color: #0F1821;
+	border-radius: 10px;
+	padding: 18px;
+	display: inline-block;
+	vertical-align: top;
+}
+.main_content p{
+	margin-bottom: 10px;
+	display: inline;
+}
+.main_content li{
+	margin-top: 10px;
+}
+h2{
+	font-size: 130%;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.example{
+	color: #808eff;
+}
+.footer{
+	color: #c2d6eb	;
+	background-color: #5F6672;
+	border-radius: 10px;
+	font-size: 85%;
+    padding: 15px;
+    margin-top: 20px;
+}

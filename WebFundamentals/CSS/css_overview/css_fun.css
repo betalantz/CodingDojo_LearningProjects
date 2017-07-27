@@ -1,0 +1,50 @@
+.wrapper{
+    width: 500px;
+    height: 500px;
+    border: red solid 5px;
+    font-size: 0;
+}
+
+.quad1, .quad2, .quad3, .quad4{
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    background-color: green;
+    line-height: 0;
+    margin: 0;
+    position: relative;
+    vertical-align: top;
+}
+
+.quad1{
+    background-color: yellow;
+}
+
+.quad1 div{
+    background-color: purple;
+    width: 33.3%;
+    height: 33.3%;
+    display: inline-block;
+}
+
+.quad1 .top{
+    margin: 0 33.3%;
+}
+.quad1 .left{
+    margin-right: 33.3%;
+}
+.quad1 .bottom{
+    margin: 0 33.3%;
+}
+.quad2{
+    background-color: blue;
+
+}
+
+.quad3{
+    background-color: olivedrab
+}
+
+.quad4{
+    background-color: springgreen
+}

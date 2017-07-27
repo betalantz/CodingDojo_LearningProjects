@@ -1,0 +1,190 @@
+/*CSS reset  */
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: #1C3E63;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+a {
+    color: white;
+}
+
+.wrapper {
+    width: 970px;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+.row {
+    width: 845px;
+    margin-left: 80px;
+    text-align: center;
+}
+
+footer h2, footer .bottom a, .Zen{
+    margin: 5px 0 10px 0;
+    font-size: 16px;
+    font-weight: 210;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    width: 350px; 
+}
+form.search {
+    padding: 10px 35px;
+    background-color: darkgray;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 0 black;
+}
+
+header .Size {
+    text-align: right;
+}
+
+header .Size p{
+    margin: 15px 30px 5px 0;
+}
+
+header .Size span{
+    color: white;
+}
+
+header .Size a{
+    color: yellow;
+}
+header .Size input[type=text] {
+    text-align: center;
+    padding: 10px 0 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey white white gray;
+}
+header .Size input[type=button] {
+    padding: 7px 9px;
+    font-size: 14px;
+    margin-left: 8px;
+    padding: 7px 9px;
+    border-radius: 5px;
+    color: white;
+    background-color: #35689C;
+    box-shadow: 2px 1px 1px 0 black
+}
+.header nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #35689C;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center; 
+    box-shadow: 2px 4px 3px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.header nav a {
+    font-size: 22px;
+    font-weight: 200;
+    text-decoration: none;
+}
+main {
+    color: white;
+}
+
+main .row{
+    display: flex;
+}
+
+main .description{
+    font-size: 15px;
+    padding: 3px 18px;
+}
+main .SideNav{
+    flex: 0 0 200px;
+    margin-top: 20px;
+}
+main .SideNav ul {
+    line-height: 1.6;
+    padding: 0;
+    font-size: 16px;
+    list-style-type: none;
+}
+
+main .SideNav ul li:before{
+    content: ">>";
+    color: yellow;
+    padding-right: 10px;
+    font-size: 10px;
+}
+ul.BetterThan{
+    padding: 0;
+    line-height: 1.6;
+    list-style: none;
+    color: yellow;
+    font-style: italic;
+    font-size: 20px;
+}
+footer .banner {
+    background-color: white;
+    border-top: 4px solid #35689C;
+}
+footer a{
+    color: lightblue;
+    text-decoration: none;
+}
+footer .banner .row {
+    display: flex;
+}
+
+footer .banner article{
+    width: 340px;
+    margin-left: 20px;
+    margin-top: 12px;
+    line-height: 1.3;
+    padding: 0 100px 15px 15px;
+    border-top: 4px solid #35689C;
+}
+footer .banner p{
+    margin: 9px 0 3px 0;
+}
+footer .banner ul{
+    list-style-type: square;
+    line-height: 1.5;
+    margin:0;
+}
+footer .foot {
+    padding: 40px 0 10px;
+    background-image: 
+        linear-gradient(
+        #1D4067, #1B63C4
+        );
+    
+}   
+footer .foot a {
+    margin: 0 25px;
+    padding-top: 50px;
+    text-align: center; 
+}
+  
+
+p#copyright{
+    text-align: center;
+    margin-top: 20px;
+    color: lightblue;
+    font-size: 10px;
+}

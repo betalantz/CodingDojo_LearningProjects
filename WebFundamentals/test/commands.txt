@@ -1,0 +1,13 @@
+Betalantzs-MacBook-Pro:~ betalantz$ cd desktop
+Betalantzs-MacBook-Pro:desktop betalantz$ mkdir test
+Betalantzs-MacBook-Pro:test betalantz$ touch index.html
+Betalantzs-MacBook-Pro:test betalantz$ touch style.css
+Betalantzs-MacBook-Pro:test betalantz$ touch commands.txt
+Betalantzs-MacBook-Pro:test betalantz$ cp index.html index_2.html
+Betalantzs-MacBook-Pro:test betalantz$ cd ..
+Betalantzs-MacBook-Pro:desktop betalantz$ mkdir destination
+Betalantzs-MacBook-Pro:test betalantz$ mv ./index_2.html ../destination/index_2.html
+Betalantzs-MacBook-Pro:test betalantz$ ls ../destination/
+index_2.html
+Betalantzs-MacBook-Pro:test betalantz$ ls
+Betalantzs-MacBook-Pro:test betalantz$ rm -rf ../destination

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Functions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link href="./JQ_functions.css" rel="stylesheet"> 
+        <script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('#addClass').click(function(){
+                   $( "#addClassRed" ).addClass( "addedClass" );
+                });  
+                $( "#slideToggle" ).click(function() {
+                    $( "#ruby" ).slideToggle( "slow", function(){
+                });
+                }); 
+                var flip = 0;
+                $( "#fader" ).click(function() {
+                    if ( flip % 2 === 0 ) {
+                    $( "#rebel" ).fadeIn("slow");
+                    } else if ( flip % 2 === 1 ) {
+                    $( "#rebel" ).fadeOut("fast"); 
+                };
+                flip++;
+                }); 
+                $( "#upDown" ).click(function() {
+                    if ( flip % 2 === 0 ) {
+                    $( "#forder" ).slideUp("slow");
+                    } else if ( flip % 2 === 1 ) {
+                    $( "#forder" ).slideDown("fast"); 
+                };
+                flip++;
+                }); 
+                $('#newColor').click(function(){
+                   $( "#attribute" ).css( "background", "blue" );
+                });  
+            });
+        </script>
+    </head>
+    <body>
+        <h1>AddClass</h1>
+        <button type="button" id="addClass">AddClass</button>
+        <p id="addClassRed">Click the button to add class 'red' to this paragraph.</p>
+        
+        <hr>
+
+        <h1>SlideToggle</h1>
+        <button type="button" id="slideToggle">SlideToggle</button>
+        <p >Click the button to slidetoggle a hidden image.</p>
+        <img id="ruby" src="RUBY.png" alt="" width="100" height="100">
+
+        <hr>
+
+        <h1>Fader</h1>
+        <button type="button" id="fader">Fade</button>
+        <p >Click the button to fade the image.</p>
+        <img id="rebel" src="rebel.png" alt="" width="100" height="100">
+
+        <hr>
+
+        <h1>Up and Down</h1>
+        <button type="button" id="upDown">Click Me</button>
+        <p >Click the button to slide the image.</p>
+        <img id="forder" src="forder.png" alt="" width="100" height="100">
+
+        <hr>
+
+        <h1>Change Color</h1>
+        <button type="button" id="newColor">Bluify</button>
+        <p >Click the button to change the color attribute.</p>
+        <div id="attribute"></div>
+
+    </body>
+</html>

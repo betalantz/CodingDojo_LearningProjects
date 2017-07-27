@@ -1,0 +1,33 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css");
+
+
+.wrapper {
+    width: 970px;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+.image_box{
+    display: inline-block;
+    width: 205px;
+    height: 205px;
+    padding: 10px;
+    margin: 6px;
+    border: 1px double;
+}
+
+.ninjas {
+    width: 200px;
+    height: 200px;
+    border: 1px;
+}
+button{
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: darkgreen;
+    border: 2px solid black;
+}

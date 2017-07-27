@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ninja See It</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./style.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('img').click(function(){
+                    $(this).fadeOut('slow');
+                });
+                $('button').click(function(){
+                    $('img').show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+            <div class="image_box">
+                <img class="ninjas" src="ninja.png" alt="">
+            </div>
+
+            <button type="button" >Restore</button>
+        
+        </div>
+    </body>
+</html>
