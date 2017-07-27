@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Elementals</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <style>
+            body {
+                background-color: black;
+            }
+            img {
+                display: inline-block;
+                margin: 0;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('img').hover(function(){
+                        var imgSrc = $(this).attr('src');
+                        $(this).attr('src', $(this).attr('alt'));
+                        $(this).attr('alt', imgSrc);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <img src="./img/tree0.jpg" alt="./img/element0.jpg" /img>
+        <img src="./img/tree1.jpg" alt="./img/element1.jpg" /img>
+        <img src="./img/tree2.jpg" alt="./img/element2.jpg" /img>
+        <img src="./img/tree3.jpg" alt="./img/element3.jpg" /img>
+    
+    </body>
+</html>
