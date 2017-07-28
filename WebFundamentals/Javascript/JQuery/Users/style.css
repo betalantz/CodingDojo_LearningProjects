@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+form label{
+    display: block;
+}
+
+table{
+    width: 700px;
+    margin: 20px auto;
+    border: 1px solid black;
+}
