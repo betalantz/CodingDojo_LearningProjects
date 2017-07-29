@@ -1,0 +1,32 @@
+* {
+    margin: 5px;
+}
+
+body {
+    width: 700px;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
+
+form, section{
+    display: inline-block;
+    vertical-align: top;
+    width: 36%;
+    height: auto;
+}
+
+form{
+    background: indigo;
+    color: white;
+    box-sizing: border-box;
+}
+form input, form label{
+    width: 40%;
+    align-items: center;
+}
+
+section{
+    background: lavender;
+
+}

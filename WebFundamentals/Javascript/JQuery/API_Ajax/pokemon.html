@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pokemon Pics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+                function makePokemon(many){
+                    for (var i = 1; i <= many; i++){
+                        var pokemon = "<img src=\"http://pokeapi.co/media/img/" +i+ ".png\">";    
+                        $('body').append(pokemon);
+                    }
+                }
+                makePokemon(151);
+            });
+
+        </script>
+
+    </head>
+    <body>
+        
+    </body>
+</html>
