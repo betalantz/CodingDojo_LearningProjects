@@ -1,0 +1,30 @@
+html {
+    background-color: skyblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
+}
+
+body {
+    display: inline;
+}
+
+h1{
+    color: blue;
+}
+.cityResult{
+    margin: 10px;
+    width: 500px;
+    background-color: burlywood;
+    border-radius: 5px;
+
+}
+h2 {
+    color: brown;
+    display: inline;
+    margin-right: 10px;
+}
+h2 span{
+    color: darkblue;
+    display: inline;
+
+}

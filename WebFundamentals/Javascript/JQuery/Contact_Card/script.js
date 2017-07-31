@@ -35,10 +35,10 @@ $(document).ready(function(){
         // console.log(temp);
         // card.html(card.data('storedInfo'));
         // card.data('storedInfo', temp);
-        if($('.front').css('display')!='none'){
-        $('.back').show().('.front').hide();
-        }else if($('.back').css('display')!='none'){
-        $('.front').show().('.back').hide();
+        if ($('.front').css('display') != 'none') {
+            $('.back').show();
+        } else if ($('.back').css('display') != 'none') {
+            $('.front').show();
         // var flip = $(this).html();
         // $(this).html($(this).html());
         // $(this.back).html(flip);
