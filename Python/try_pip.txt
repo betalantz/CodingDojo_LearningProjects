@@ -1,0 +1,23 @@
+
+Betalantzs-MacBook-Pro:~ betalantz$ sudo pip install django
+	Installs Python packages from various sources (incl. distribution files) employing 	version control
+
+Betalantzs-MacBook-Pro:~ betalantz$ pip list
+	Displays a list of all currently installed Python packages
+
+Betalantzs-MacBook-Pro:~ betalantz$ pip install Django
+	Checks for required files and, in this case, returns that the requirements are 		already satisfied.
+Requirement already satisfied: Django in /Library/Python/2.7/site-packages
+Requirement already satisfied: pytz in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from Django)
+
+Betalantzs-MacBook-Pro:~ betalantz$ pip freeze
+	Outputs installed packages in requirements format.
+
+Betalantzs-MacBook-Pro:~ betalantz$ pip freeze > requirements.txt
+	Creates a text file holding the results of pip freeze for the purpose of acheiving 	repeatable installations. It contains a pinned version of everything installed 		when pip freeze was run.
+
+Betalantzs-MacBook-Pro:~ betalantz$ pip show Django
+	Displays details of current installation of a package, including version, summary, 	author, location, and requirements.
+
+Betalantzs-MacBook-Pro:~ betalantz$ pip search Flask
+	Searches all packages in the Python Package Index (PyPI) by name and summary.
