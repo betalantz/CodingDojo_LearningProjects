@@ -1,7 +1,7 @@
 class Animal(object):
-    def __init__(self, name, health):
+    def __init__(self, name):
         self.name = name
-        self.health = health
+        self.health = 100
     def walk(self):
         self.health -= 1
         return self
@@ -12,16 +12,16 @@ class Animal(object):
         print "{}'s health is {}".format(self.name, self.health)
         return self
 class Dog(Animal):
-    def __init__(self, name, health):
-        super(Dog, self).__init__(name, health)
+    def __init__(self, name):
+        super(Dog, self).__init__(name)
         self.health = 150
     def pet(self):
         self.health += 5
         return self
 class Dragon(Animal):
-    def __init__(self, name, health):
-        super(Dragon, self).__init__(name, health)
-        self.health += 170
+    def __init__(self, name):
+        super(Dragon, self).__init__(name)
+        self.health = 170
     def fly(self):
         self.health -= 10
         return self
@@ -30,9 +30,9 @@ class Dragon(Animal):
         print "I am a dragon!"
         return self
 
-a = Animal("Fletch", 20)
+a = Animal("Fletch")
 a.walk().walk().walk().run().run().displayHealth()
-d = Dog("Nymeria", 0)
+d = Dog("Nymeria")
 d.walk().walk().walk().run().run().pet().displayHealth()
-w = Dragon("Yevaud", 0)
+w = Dragon("Yevaud")
 w.walk().walk().walk().run().run().fly().displayHealth()
