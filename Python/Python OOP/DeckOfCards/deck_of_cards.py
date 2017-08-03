@@ -35,5 +35,10 @@ class Deck(object):
                             card['fill'] = 'solid'
                     self.cards.append(card)
 # print Deck().cards
+    def shuffle(self):
+        for i in range (0, len(self.cards)):
+            index = random.randint(0 len(self.cards)-1-i)
+            self.cards.append(self.cards[index])
+            self.cards.remove(self.cards[index])
+
     def showCards(self):
-        
