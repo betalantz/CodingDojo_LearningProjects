@@ -44,9 +44,9 @@ class Call(object):
         return self
 
 # creating instances of calls to pass to the methods, and invoking the methods
-call_a = Call(9,'Mrs. Bixby', '206.345.3322', '13:36', 'program inquiry')
-call_b = Call(10, 'Tom Schneider', '425.567.5432', '13:42', 'bug report')
-call_c = Call(11, 'JarJar', '010.101.0101', '14:02', 'just annoying')
+call_a = Call(9,'Mrs. Bixby', '206.345.3322', '13:36', 'program inquiry').displayCall()
+call_b = Call(10, 'Tom Schneider', '425.567.5432', '13:42', 'bug report').displayCall()
+call_c = Call(11, 'JarJar', '010.101.0101', '14:02', 'just annoying').displayCall()
 nc = CallCenter([call_a, call_b, call_c])
 nc.add(Call(12, 'Ada Lovelace', '360.063.9090', '13:51', 'a great idea')).info()
 nc.remove().info()
