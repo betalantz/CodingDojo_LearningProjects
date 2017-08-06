@@ -1,0 +1,9 @@
+html {
+    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+h1 {
+    background-color: black;
+    color: yellow;
+}

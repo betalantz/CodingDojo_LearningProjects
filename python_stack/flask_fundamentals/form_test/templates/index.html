@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Form Test Index</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">  
+    </head>
+    <body>
+        <h1>Index Page</h1>
+        <h3>Create a User</h3>
+        <form action='/users' method='post'>
+            Name: <input type='text'name='name'>
+            Email: <input type='text' name='email'>
+            <input type='submit' value='create user'>
+        </form>
+    </body>
+</html>
