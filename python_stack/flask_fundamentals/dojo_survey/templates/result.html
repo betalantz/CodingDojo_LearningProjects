@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+        <title>Dojo Survey Result</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">  
+    </head>
+    <body>
+        <h1>Submitted Info</h1>
+        <p>Name: {{ name }}</p>
+        <p>Location: {{ location }}</p>
+        <p>Favorite Language: {{ language }}</p>
+        <p>Comment: {{ comment }}</p>
+        <button type="button" onclick="href='{{ url_for('index') }}''">Go Back</button>
+    </body>
+</html>
