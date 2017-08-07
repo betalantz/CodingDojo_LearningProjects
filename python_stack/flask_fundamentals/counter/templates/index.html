@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="\en">
+    <head>
+        <title>Counter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body style='display: block; text-align: center; padding: 30px'>
+        <p><h1>Counter</h1></p>
+        <p><h3>{{ session['counter'] }} times.</h3></p>
+        <form action='/by_2' method='post'>
+            <input type='submit' name='by_2' value='Add 2'>
+        </form>
+        <form action='/reset' method='post'>
+            <input type='submit' name='reset' value='Reset'>
+        </form>
+
+    </body>
+</html>
