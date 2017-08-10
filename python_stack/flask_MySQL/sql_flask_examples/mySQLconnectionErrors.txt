@@ -1,0 +1,25 @@
+<changes to the host>
+no errors, this value can apparently be any string or “”
+
+<changes to user>
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'sdsf'@'localhost' (using password: YES)")
+fix: Make sure you pass the correct ‘user’ value to the mysql server, which by default is ‘root’
+
+<removing or changing password>
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+fix: Make sure you pass the correct ‘password’ value to the mysql server
+
+<changes to database>
+'database': , # we got db as an argument
+                ^
+SyntaxError: invalid syntax
+	
+	-or-
+
+'database': friendsdb, # we got db as an argument
+NameError: global name 'friendsdb' is not defined
+fix: You must pass the name of the database currently running on the MySQL server as a string.  This can be hard coded into <mysqlconnection.py> or can be passed as a variable from <server.py>
+
+<changes to the port>
+OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+fix: The value of this string must be the port that the MySQL server is currently using, which can be ascertained by checking the prefs of MAMP.
