@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ninja Money</title>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <p>Your Gold: {{request.session.gold}}</p>
+
+        <div style='outline: thin solid black;
+            height: 200px; width: 200px; display: inline-block; text-align: center'>
+            <p style='font-size: 25px; font-weight: bold'>Cave</p>
+            <p>(Earns 5-10 gold)</p>
+            <form action='/process' method='post'>
+                {% csrf_token %}
+                <input type='hidden' name='building' value='cave'>
+                <input type='submit' value='Find gold!'>
+            </form>
+        </div>
+        <div style='outline: thin solid black;
+            height: 200px; width: 200px; display: inline-block; text-align: center'>
+            <p style='font-size: 25px; font-weight: bold'>Farm</p>
+            <p>(Earns 10-20 gold)</p>
+            <form action='/process' method='post'>
+                {% csrf_token %}
+                <input type='hidden' name='building' value='farm'>
+                <input type='submit' value='Find gold!'>
+            </form>
+        </div>
+        <div style='outline: thin solid black;
+            height: 200px; width: 200px; display: inline-block; text-align: center'>
+            <p style='font-size: 25px; font-weight: bold'>House</p>
+            <p>(Earns 2-5 gold)</p>
+            <form action='/process' method='post'>
+                {% csrf_token %}
+                <input type='hidden' name='building' value='house'>
+                <input type='submit' value='Find gold!'>
+            </form>
+        </div>
+        <div style='outline: thin solid black;
+            height: 200px; width: 200px; display: inline-block; text-align: center'>
+            <p style='font-size: 25px; font-weight: bold'>Casino</p>
+            <p>(Earns/takes 0-50 gold)</p>
+            <form action='/process' method='post'>
+                {% csrf_token %}
+                <input type='hidden' name='building' value='casino'>
+                <input type='submit' value='Find gold!'>
+            </form>
+        </div>
+        <div style='outline: thin solid black;
+            height: 450px; width: 450px'>
+            {% for event in request.session.activities %}
+                <p>{{event}}</p>
+            {%endfor%}
+        </div>
+    </body>
+</html>
