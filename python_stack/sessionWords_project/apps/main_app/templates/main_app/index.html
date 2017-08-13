@@ -17,6 +17,9 @@
             <input type='submit' name='color' value='submit'><br>
 
         </form>
+        {% for event in request.session.list %}
+            <p>{{event|safe}}</p>
+        {%endfor%}
 
         <!-- {{request.session.newWord|safe}} -->
     </body>
