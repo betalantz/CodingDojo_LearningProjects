@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect
 
+# def test(request):
+#     print "see the viewz"
+
 def index(request):
     return render(request, 'main_app/index.html')
 
 def process(request):
+    # print 'jazz hands'
+    # print '---------->', request.POST['word']
     try:
-        request.session['list'] = request.POST['list']
+        request.session['list']
     except:
         request.session['list'] = []
     try:
@@ -21,14 +26,14 @@ def process(request):
         request.session['bold'] = request.POST['bold']
     except:
         request.session['bold'] = None
-    print request.session['bold'], request.session['color']
+    # print request.session['bold'], request.session['color']
 
-    request.session['newWord'] = request.session['word']
+    newWord = request.session['word']
 
-    if request.session['bold'] = 'on':
-        request.session['newWord'] = '<b>' + request.session['newWord'] + '</b>'
+    if request.session['bold'] != None:
+        newWord = '<b>' + newWord + '</b>'
     if request.session['color'] != None:
-        request.session['newWord'] = '<p style=" color: ' + request.session['color'] + ';">'+ request.session['newWord']+'</p'
-    request.session['list'].append(request.session['newWord'])
+        newWord = '<p style=" color: ' + request.session['color'] + ';">'+ newWord+'</p'
+    request.session['list'].append(newWord)
 
     return redirect('/')

@@ -7,20 +7,21 @@
         <link href="css/style.css" rel="stylesheet"> -->
     </head>
     <body>
-        <form>
+        <form action='/process' method='post'>
+            {% csrf_token %}
             <input type='text' name='word' placeholder="Enter word here."><br>
             <h4>Pick a color:</h4>
             <input type='radio' name='color' value='red'>red<br>
             <input type='radio' name='color' value='green'>green<br>
             <input type='radio' name='color' value='blue'>blue<br>
-            <input type='checkbox' name='bold' value='Check this box for bold'><br>
-            <input type='submit' name='color' value='submit'><br>
-
+            <input type='checkbox' name='bold' value='bold'>Check this box for BOLD<br>
+            <input type='submit' value='submit'><br>
         </form>
+        <div>
         {% for event in request.session.list %}
-            <p>{{event|safe}}</p>
+            <p>{{event |safe}}</p>
         {%endfor%}
-
+        </div>
         <!-- {{request.session.newWord|safe}} -->
     </body>
 </html>
