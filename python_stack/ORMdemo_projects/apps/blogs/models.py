@@ -16,7 +16,7 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     def __repr__(self):
-        return "<Comment object: {} {}>".format(self.name, self.desc)
+        return "<Comment object: {}>".format(self.comment)
     # Notice the association made with ForeignKey for a one-to-many relationship
     # There can be many comments to one blog
     blog = models.ForeignKey(Blog, related_name = "comments")
@@ -28,4 +28,4 @@ class Admin(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     def __repr__(self):
-        return "<Admin object: {} {}>".format(self.name, self.desc)
+        return "<Admin object: {} {} {}>".format(self.first_name, self.last_name, self.email)
