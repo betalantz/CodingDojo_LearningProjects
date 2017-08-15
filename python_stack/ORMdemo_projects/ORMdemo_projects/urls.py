@@ -19,3 +19,10 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
+
+#Inside your main urls.py file
+#Examples of how to set up named routes using 'namespace'
+urlpatterns = [
+    url(r'^accounts/', include('apps.login_reg_app.urls', namespace='users')),
+    url(r'^courses/', include('apps.courses_app.urls', namespace='courses')),
+]

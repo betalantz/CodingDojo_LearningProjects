@@ -1,0 +1,18 @@
+<!-- NOTE: target/ in the examples below is what gets caught by our main project’s urls.py -->
+
+<!-- Inside your app's index.html file -->
+<a href="/target/blogs/new"></a>
+<!-- is the equivalent of:  -->
+<a href="{% url 'my_new' %}"></a>
+<!-- This form's action attribute -->
+<form class="" action="/target/blogs/5/delete" method="post">
+  <input type="submit" value="Submit">
+</form>
+<!-- is the equivalent of: -->
+<form class="" action="{%url 'my_delete' id=5 %}" method="post">
+  <input type="submit" value="Submit">
+</form>
+
+<!-- Example of how to refer to routes using 'namespace' The apps are hypothetical now -->
+<a href="{% url 'courses:index' %}">This link will hit the index route in your courses_app</a>
+<a href="{% url 'users:index' %}">And this link will hit the index route in your login_reg_app</a>
