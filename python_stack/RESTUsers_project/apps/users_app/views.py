@@ -8,15 +8,16 @@ def index(request):
     return render(request, "users_app/index.html", {"users_list": User.objects.all()})
 
 def new(request):
-    response = 'placeholder to later display a new form to create a new user'
-    return HttpResponse(response)
+    return render(request, "users_app/new.html") 
 
 def create(request):
-    return redirect('/users/')
+    n  = User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'],email=request.POST['email'])
+    showNew = '/users/'+str(n.id) +'/'
+    return redirect(showNew)
 
 def show(request, id):
     if request.method=='POST':
-        print 'hello im in show'
+        # print 'hello im in show'
         user = User.objects.get(id = id)
         user.first_name = request.POST['first_name']
         user.last_name = request.POST['last_name']
