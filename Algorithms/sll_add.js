@@ -1,5 +1,5 @@
 function sll(){
-    var head = null;
+    this.head = null;
 
     function Node(val){
         this.val = val;
@@ -9,10 +9,10 @@ function sll(){
 
     this.add = function(val){
         var myNode = new Node(val);
-        if(head === null){
-            head = myNode;
+        if(this.head === null){
+            this.head = myNode;
         } else {
-            var current = head;
+            var current = this.head;
             while(current.next){
                 current = current.next;
             }
@@ -21,9 +21,9 @@ function sll(){
     };
 
     this.show = function() {
-        while (head != null) {
-            console.log(head.value);
-            head = head.next;
+        while (this.head != null) {
+            console.log(this.head.value);
+            this.head = this.head.next;
         }
     };
 }
