@@ -19,9 +19,12 @@ def show(request, id):
     if request.method=='POST':
         # print 'hello im in show'
         user = User.objects.get(id = id)
-        user.first_name = request.POST['first_name']
-        user.last_name = request.POST['last_name']
-        user.email = request.POST['email']
+        if (request.POST['first_name']):
+            user.first_name = request.POST['first_name']
+        if (request.POST['last_name']):
+            user.last_name = request.POST['last_name']
+        if (request.POST['email']):
+            user.email = request.POST['email']
         user.save()
     return render(request, "users_app/show.html", {"user": User.objects.get(id=id)})
 
@@ -33,4 +36,6 @@ def edit(request, id):
 #     return redirect('/users')
 
 def destroy(request, id):
+    d = User.objects.get(id = id)
+    d.delete()
     return redirect('/users')

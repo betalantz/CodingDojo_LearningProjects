@@ -23,6 +23,7 @@
                 <td><a href={% url 'my_show' user.id %}>Show</a> <a href={% url 'my_edit' user.id %}>Edit</a> <a href={% url 'my_destroy' user.id %}>Delete</a></td>
             </tr>
             {% endfor %}
+        </table>
         <p><a href={% url 'my_new'%}>Add a new user</a></p>
     </body>
 </html>
