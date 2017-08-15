@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Users Show</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>User {{ user.id }}</h1>
+            <div>
+                <p></p>
+                <p>Full name: {{ user.first_name }} {{ user.last_name }}</a></p>
+                <p>Email: {{ user.email }}</p>
+                <p>Created at: {{ user.created_at }}</p>
+            </div>
+            <div>
+                <p><a href={% url 'my_index' %}>Home</a> | <a href={% url 'my_edit' user.id %}>Edit</a> | <a href={% url 'my_destroy' user.id %}>Delete</a></p>
+            </div>
+    </body>
+</html>

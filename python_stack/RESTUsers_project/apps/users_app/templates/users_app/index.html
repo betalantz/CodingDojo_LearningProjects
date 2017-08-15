@@ -6,5 +6,22 @@
     </head>
     <body>
         <h1>Users</h1>
+        <table style="width:100%">
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            {% for user in users_list %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td><a href={% url 'my_show' user.id %}>{{ user.first_name }} {{ user.last_name }}</a></td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.created_at }}</td>
+                <td><a href={% url 'my_show' user.id %}>Show</a> <a href={% url 'my_edit' user.id %}>Edit</a> <a href={% url 'my_destroy' user.id %}>Delete</a></td>
+            </tr>
+            {% endfor %}
     </body>
 </html>
