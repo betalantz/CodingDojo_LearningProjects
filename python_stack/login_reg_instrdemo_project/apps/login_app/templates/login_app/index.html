@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+
+    {% if messages %}
+        {% for message in messages %}
+            {%if message.tags == 'error'%}
+               <p style='color: red'> {{ message }} </p>
+            {% elif message.tags == 'success'%}
+               <p style='color: green'> {{ message }} </p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+        <h2>Register Here:</h2>
+        <div style='outline: thin solid black; height: 200px; width: 200px; display: inline-block; vertical-align: top'>
+            <form action="{% url 'my_register' %}" method='post'>
+                {% csrf_token %}
+                <input type='text' name='first_name' placeholder='Enter your first name'><br>
+                <input type='text' name='last_name' placeholder='Enter your last name'><br>
+                <input type='text' name='email' placeholder='Enter your email'><br>
+                <input type='text' name='password' placeholder='Enter a password'><br>
+                <input type='text' name='c_password' placeholder='Confirm password'><br>
+                <input type='submit' value='click here to register'>
+            </form>
+        </div>
+        <h2>Login Here:</h2>
+        <div style='outline: thin solid black; height: 200px; width: 200px; display: inline-block; vertical-align: top'>
+            <form action="{% url 'my_login' %}" method='post'>
+                {% csrf_token %}
+                <input type='text' name='email' placeholder='Enter your email'><br>
+                <input type='text' name='password' placeholder='Enter a password'><br>
+                <input type='submit' value='click here to Login!'>
+            </form>
+        </div>
+
+    </body>
+</html>
