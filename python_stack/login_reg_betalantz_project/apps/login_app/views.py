@@ -1,12 +1,11 @@
 from django.shortcuts import render, HttpResponse, redirect
 from models import *
 
-def test(request):
-    print "/\/\/\/\/\/ Create your views here."
+# def test(request):
+#     print "/\/\/\/\/\/ Create your views here."
 
 def index(request):
-    response = 'placeholder to later display the home page'
-    return HttpResponse(response)
+    return render(request, "login_app/index.html") 
 
 def register(request):
     response = 'placeholder to later process form input to register a new user'
