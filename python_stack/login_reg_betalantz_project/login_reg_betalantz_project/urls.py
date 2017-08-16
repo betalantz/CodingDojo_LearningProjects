@@ -16,11 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-def test(request):
-    print 'welcome to project urls'
+# def test(request):
+#     print 'welcome to project urls'
 
 urlpatterns = [
-    url(r'^', test),
-    # url(r'^', include('apps.users_app.urls')),
+    url(r'^', include('apps.login_app.urls')),
 ]
 

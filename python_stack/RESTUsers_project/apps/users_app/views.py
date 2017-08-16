@@ -17,7 +17,7 @@ def create(request):
 
 def show(request, id):
     if request.method=='POST':
-        # print 'hello im in show'
+        # the following is an update function which could be a separate method
         user = User.objects.get(id = id)
         if (request.POST['first_name']):
             user.first_name = request.POST['first_name']
