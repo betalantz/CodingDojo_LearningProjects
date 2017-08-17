@@ -14,12 +14,10 @@ def register(request):
         for tag, error in errors.iteritems():
             messages.error(request, error, extra_tags=tag)
         return redirect('/index')
-    # else:
-    #     user = User.objects.get(id = id)
-    #     user.name = request.POST['name']
-    #     user.desc = request.POST['desc']
-    #     user.save()
-    #     return redirect('/success')
+    else:
+        user = User.objects.createUser(request.POST)
+        messages.success(request, 'You registered successfully! Please log in.')
+        return redirect('/')
 
 def login(request):
     response = 'placeholder to later process form input to login a registered user'

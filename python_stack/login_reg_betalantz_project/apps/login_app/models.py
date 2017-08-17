@@ -28,7 +28,18 @@ class UserManager(models.Manager):
             errors["psw_len"]="Passwords must be at least 8 characters long."
         if postData['psw'] != postData['cfm']:
             errors["psw_match"]="Passwords do not match."
-        return errors;
+        return errors
+
+    def createUser(self, postData):
+        hash1 = bcrypt.hashpw(postData['psw'].encode(), bcrypt.gensalt())
+        print hash1
+        user = User.objects.create(
+            first_name=postData['first_name'],
+            last_name=postData['last_name'],
+            email=postData['email'],
+            password=hash1
+        )
+        return user
 
 class User(models.Model):
     first_name = models.CharField(max_length=50)
@@ -42,6 +53,5 @@ class User(models.Model):
     # the old hidden objects key with a new one with extra properties!!!
     objects = UserManager()
     # *************************
-    
     def __repr__(self):
         return "<User object: {} {} {} {}>".format(self.first_name, self.last_name, self.email, self.password)
