@@ -18,7 +18,7 @@
         {% endfor %}
     {% endif %}
         <h2>Register Here:</h2>
-        <div style='outline: thin solid black; height: 200px; width: 200px; display: inline-block; vertical-align: top'>
+        <div style='outline: thin solid blue; height: 200px; width: 200px; display: inline-block; vertical-align: top'>
             <form action="{% url 'my_register' %}" method='post'>
                 {% csrf_token %}
                 <input type='text' name='first_name' placeholder='Enter your first name'><br>
@@ -30,7 +30,7 @@
             </form>
         </div>
         <h2>Login Here:</h2>
-        <div style='outline: thin solid black; height: 200px; width: 200px; display: inline-block; vertical-align: top'>
+        <div style='outline: thin solid blue; height: 200px; width: 200px; display: inline-block; vertical-align: top'>
             <form action="{% url 'my_login' %}" method='post'>
                 {% csrf_token %}
                 <input type='text' name='email' placeholder='Enter your email'><br>

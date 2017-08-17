@@ -8,6 +8,12 @@
     </head>
     <body>
         <h1>Welcome, {{request.session.user_first_name}}!</h1>
+        {% for message in messages %}
+            {% if message.tags == 'success'%}       
+                 <p style='color: green'> {{ message }} </p>
+            {% endif %}
+        {% endfor %}
+         
         <a href="{% url 'my_logout'%}">Logout</a>
         <table>
             <tr>
@@ -17,14 +23,14 @@
                 <th>Action</th>
             </tr>
                 {% for user in users %}
-                    {% if user.id == request.session.user_id %}
+                    {% if user.id != request.session.user_id %}
                         <tr>
                             <td>{{user.first_name}}</td>
                             <td>{{user.last_name}}</td>
                             <td>{{user.email}}</td>
-                            <td><a href="/delete/user/{{user.id}}">Delete user</a></td>
+                            <td><a href="/delete/{{user.id}}">Delete user</a></td>
                         </tr>
-                    {%endif%}
+                    {% endif %}
                 {% endfor %}
         </table>
     </body>

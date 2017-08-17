@@ -26,5 +26,7 @@ urlpatterns = [
     url(r'^login$', views.login, name='my_login'),
     url(r'^home$', views.home, name='my_home'),
     url(r'^logout$', views.logout, name='my_logout'),
-    url(r'^delete$', views.delete, name='my_delete'),
+    url(r'^delete/(?P<id>\d+)$', views.delete, name='my_delete'),
+    # url(r'^users/(?P<id>\d+)/destroy/$', views.destroy, name='my_destroy'),
+
 ]

@@ -39,15 +39,12 @@ class UserManager(models.Manager):
         else:
             if bcrypt.checkpw(PostData['password'].encode(), users[0].password.encode()) == False:
                 results['errors'].append('Wrong password.')
-
-        # user = User.objects.get(email=request.POST['email'])
         # print results
         if len(results['errors']) > 0:
             results['status'] = False
         else:
             results['user'] = users[0]
         return results
-
 
 
 class User(models.Model):
