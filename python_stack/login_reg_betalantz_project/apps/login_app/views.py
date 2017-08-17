@@ -38,10 +38,12 @@ def sessionCheck(request):
     except:
         return False
 
-
 def success(request):
     if sessionCheck(request)==False:
         return redirect ('/')
     messages.success(request, 'Successfully logged in!')
     return render(request, 'login_app/success.html')
 
+def logout(request):
+    request.session.flush()
+    return redirect ('/')
