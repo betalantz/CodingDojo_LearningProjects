@@ -9,9 +9,9 @@ def index(request):
     return render(request, "login_app/index.html") 
 
 def register(request):
-    errors = User.objects.basic_validator(request.POST)
-    if len(errors):
-        for tag, error in errors.iteritems():
+    results = User.objects.register_validator(request.POST)
+    if len(results):
+        for tag, error in results.iteritems():
             messages.error(request, error, extra_tags=tag)
         return redirect('/index')
     else:
@@ -20,8 +20,18 @@ def register(request):
         return redirect('/')
 
 def login(request):
-    response = 'placeholder to later process form input to login a registered user'
-    return HttpResponse(response)
+    results = User.objects.login_validator(request.POST)
+    if results['status']==False:
+        for error in results['errors']:
+            messages.error(request, error)
+        return redirect('/index')
+    # store a user auth token in sessions to allow a session check
+    request.session['user_id']=results['user'].id
+    request.session['user_first_name']=results['user'].first_name
+
+    storage = messages.get_messages(request)
+    storage.used = True
+    return redirect('/success')
 
 def success(request):
     response = 'placeholder to later display a success message'
