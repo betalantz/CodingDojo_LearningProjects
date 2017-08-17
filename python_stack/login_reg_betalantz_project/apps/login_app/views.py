@@ -10,14 +10,13 @@ def index(request):
 
 def register(request):
     results = User.objects.register_validator(request.POST)
-    if len(results):
-        for tag, error in results.iteritems():
-            messages.error(request, error, extra_tags=tag)
+    if results['status']==False:
+        for error in results['errors']:
+            messages.error(request, error)
         return redirect('/index')
-    else:
-        user = User.objects.createUser(request.POST)
-        messages.success(request, 'You registered successfully! Please log in.')
-        return redirect('/')
+    user = User.objects.createUser(request.POST)
+    messages.success(request, 'You registered successfully! Please log in.')
+    return redirect('/')
 
 def login(request):
     results = User.objects.login_validator(request.POST)
@@ -33,6 +32,16 @@ def login(request):
     storage.used = True
     return redirect('/success')
 
+def sessionCheck(request):
+    try:
+        return request.session['user_id']
+    except:
+        return False
+
+
 def success(request):
-    response = 'placeholder to later display a success message'
-    return HttpResponse(response)
+    if sessionCheck(request)==False:
+        return redirect ('/')
+    messages.success(request, 'Successfully logged in!')
+    return render(request, 'login_app/success.html')
+

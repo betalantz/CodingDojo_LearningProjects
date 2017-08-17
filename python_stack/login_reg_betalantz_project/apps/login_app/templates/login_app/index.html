@@ -17,10 +17,15 @@
             <label for="confirm">Confirm pw:<input type="password" name="cfm" id="cfm"></label>
             <input type="submit" value="Register">
         </form>
+        <hr>
         {% if messages %}
         <ul class="messages">
             {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {%if message.tags == 'error'%}
+                    <li style='color: red'>{{ message }}</li>
+                {% elif message.tags == 'success'%}
+                    <li style='color: green'>{{ message }}</li>
+                {% endif %}                   
             {% endfor %}
         </ul>
         {% endif %}

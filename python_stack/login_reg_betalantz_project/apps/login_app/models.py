@@ -7,27 +7,31 @@ import bcrypt
 #No methods in our new manager should ever catch the whole request object with a parameter!!! (just parts, like request.POST)
 class UserManager(models.Manager):
     def register_validator(self, postData):
-        results = {}
+        results = {'status': True, 'errors': []}
         if len(postData['first_name'])==0:
-            results["first_name_req"]="'First name' is a required field."
+            results["errors"].append("'First name' is a required field.")
         if len(postData['last_name'])==0:
-            results["last_name_req"]="'Last name' is a required field."
+            results["errors"].append("'Last name' is a required field.")
         if len(postData['first_name'])<3:
-            results["first_name_len"]="First name should be more than 2 characters."
+            results["errors"].append("First name should be more than 2 characters.")
         if len(postData['last_name'])<3:
-            results["last_name_len"]="Last name should be more than 2 characters."
+            results["errors"].append("Last name should be more than 2 characters.")
         if postData['first_name'].isalpha()==False:
-            results["first_name_alph"]="Names must be characters (a-z) only."
+            results["errors"].append("Names must be characters (a-z) only.")
         if postData['last_name'].isalpha()==False:
-            results["last_name_alph"]="Names must be characters (a-z) only."
+            results["errors"].append("Names must be characters (a-z) only.")
         if len(postData['email'])==0:
-            results["email_req"]="'Email' is a required field."
+            results["errors"].append("'Email' is a required field.")
         if not re.match('(\w+[.|\w])*@(\w+[.])*\w+', postData['email']):
-            results["email_inval"]="Please enter a valid email."
+            results["errors"].append("Please enter a valid email.")
         if len(postData['psw'])<8:
-            results["psw_len"]="Passwords must be at least 8 characters long."
+            results["errors"].append("Passwords must be at least 8 characters long.")
         if postData['psw'] != postData['cfm']:
-            results["psw_match"]="Passwords do not match."
+            results["errors"].append("Passwords do not match.")
+        
+        if len(results['errors']):
+            results['status']=False
+
         return results
 
     def createUser(self, postData):
@@ -51,7 +55,6 @@ class UserManager(models.Manager):
         
         if len(results['errors']):
             results['status']=False
-            print results['status']
         else:
             results['user']=users[0]
             print results['user']
