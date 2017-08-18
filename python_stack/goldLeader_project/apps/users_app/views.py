@@ -6,7 +6,7 @@ def test(request):
     print "/\/\/\/\/\/ Create user views here."
 
 def index(request):
-    return render(request, "login_app/index.html") 
+    return render(request, "users_app/login.html") 
 
 def register(request):
     results = User.objects.register_validator(request.POST)
@@ -30,7 +30,7 @@ def login(request):
 
     storage = messages.get_messages(request)
     storage.used = True
-    return redirect('/success')
+    return redirect('/dashboard')
 
 def sessionCheck(request):
     try:
@@ -38,11 +38,11 @@ def sessionCheck(request):
     except:
         return False
 
-def success(request):
+def dashboard(request):
     if sessionCheck(request)==False:
         return redirect ('/')
     messages.success(request, 'Successfully logged in!')
-    return render(request, 'login_app/success.html')
+    return render(request, 'users_app/dash.html')
 
 def logout(request):
     request.session.flush()

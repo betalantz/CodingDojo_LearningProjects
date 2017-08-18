@@ -41,6 +41,7 @@ class UserManager(models.Manager):
             last_name=postData['last_name'],
             email=postData['email'],
             password=hash1, 
+            gold=0,
         )
         return user
 
