@@ -7,5 +7,7 @@ def test(request):
 
 urlpatterns = [
     # url(r'^', include('apps.users_app.urls')),
-    url(r'^', views.index),
+    url(r'^$', views.index),
+    url(r'^login/$', views.login, name='my_login'),
+
 ]

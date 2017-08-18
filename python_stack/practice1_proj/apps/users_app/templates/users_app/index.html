@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Login & Registration</title>
+        <title>Login Home</title>
         <meta charset="UTF-8">
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet"> -->
     </head>
     <body>
-        <h1>Registration</h1>
+        <h2>Login</h2>
+        <form action="{% url 'my_login' %}" method='post'>
+            {% csrf_token %}
+            <label for="name">First Name:<input type="text" name="name" id="name"></label>
+            <label for="age">age:<input type="number" name="age" id="age"></label>
+            <input type="submit" value="Login">
+        </form>
+        <hr>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                {%if message.tags == 'error'%}
+                    <li style='color: red'>{{ message }}</li>
+                {% elif message.tags == 'success'%}
+                    <li style='color: green'>{{ message }}</li>
+                {% endif %}                   
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <hr>
