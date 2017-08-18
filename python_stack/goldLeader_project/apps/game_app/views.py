@@ -1,10 +1,10 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, HttpResponse, redirect
-from models import *
+from ..users_app.models import *
 from django.contrib import messages
 import random
 from time import gmtime, strftime
-from users_app import views
+from ..users_app.views import sessionCheck
 
 def test(request):
     print "# Create your views here."
@@ -52,4 +52,4 @@ def saveGame(request):
     g.activity = request.session['activities']
     g.save()
     print g.gold
-    return redirect("{% url 'my_dashboard' %}")
+    return redirect('/dashboard')

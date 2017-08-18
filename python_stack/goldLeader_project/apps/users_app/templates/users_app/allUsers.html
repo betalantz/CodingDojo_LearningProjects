@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Players Index</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Ninja Gold Players</h1>
+        <table style="width:100%">
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Gold</th>
+                <th>Created At</th>
+            </tr>
+            {% for user in users_list %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td><a href={% url 'my_show' user.id %}>{{ user.first_name }} {{ user.last_name }}</a></td>
+                <td>{{ user.gold }}</td>
+                <td>{{ user.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'my_return'%}">Go Back</a>
+    </body>
+</html>

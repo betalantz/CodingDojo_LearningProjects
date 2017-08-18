@@ -53,4 +53,8 @@ def logout(request):
 def showAll(request):
     if sessionCheck(request)==False:
         return redirect ('/')
-    return render(request, 'users_app/allUsers.html')
+    return render(request, 'users_app/allUsers.html', {"users_list": User.objects.all()})
+
+def show(request, id):
+    return render(request, 'users_app/showUser.html', {"user": User.objects.get(id=id)})
+ 
