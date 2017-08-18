@@ -7,13 +7,10 @@
         <link href="css/style.css" rel="stylesheet"> -->
     </head>
     <body>
-        <h1>Welcome, {{request.session.user_first_name}}!</h1>
-        {% for message in messages %}
-            {% if message.tags == 'success'%}       
-                 <p style='color: green'> {{ message }} </p>
-            {% endif %}
-        {% endfor %}
+        <h1>Dashboard</h1>
          
+        <a href="{% url 'my_game'%}">Play</a>
+        <a href="{% url 'my_logout'%}">Logout</a>
         <a href="{% url 'my_logout'%}">Logout</a>
     </body>
 </html>
