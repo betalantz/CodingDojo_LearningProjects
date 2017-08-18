@@ -27,6 +27,8 @@ def login(request):
     # store a user auth token in sessions to allow a session check
     request.session['user_id']=results['user'].id
     request.session['user_first_name']=results['user'].first_name
+    # request.session['user_gold']=results['user'].gold
+    
 
     storage = messages.get_messages(request)
     storage.used = True
@@ -47,3 +49,8 @@ def dashboard(request):
 def logout(request):
     request.session.flush()
     return redirect ('/')
+
+def showAll(request):
+    if sessionCheck(request)==False:
+        return redirect ('/')
+    return render(request, 'users_app/allUsers.html')

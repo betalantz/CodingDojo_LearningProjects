@@ -6,6 +6,7 @@ def test(request):
 
 urlpatterns = [
     url(r'^game/$', views.game, name='my_game'),
+    url(r'^game/save$', views.saveGame, name='my_return'),
     url(r'^game/process$', views.process),
 
 ]

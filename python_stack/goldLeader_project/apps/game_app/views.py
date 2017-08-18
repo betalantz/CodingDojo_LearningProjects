@@ -4,6 +4,7 @@ from models import *
 from django.contrib import messages
 import random
 from time import gmtime, strftime
+from users_app import views
 
 def test(request):
     print "# Create your views here."
@@ -11,6 +12,8 @@ def test(request):
 def game(request):
     # del request.session['gold']
     # del request.session['activities']
+    if sessionCheck(request)==False:
+        return redirect ('/')
     try:
         request.session['gold']
     except:
@@ -42,3 +45,11 @@ def process(request):
         # for i in range(0, len(request.session['activities'])):
         #     request.session['activities'][i] = 'hodor'
     return redirect('/game')
+
+def saveGame(request):
+    g = User.objects.get(id=request.session['user_id'])
+    g.gold = g.gold + request.session['gold']
+    g.activity = request.session['activities']
+    g.save()
+    print g.gold
+    return redirect("{% url 'my_dashboard' %}")
