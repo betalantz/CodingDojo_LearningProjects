@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h1>Welcome, {{request.session.user_first_name}}!</h1>
+        {% for message in messages %}
+            {% if message.tags == 'success'%}       
+                 <p style='color: green'> {{ message }} </p>
+            {% endif %}
+        {% endfor %}
+         
+        <a href="{% url 'my_logout'%}">Logout</a>
+    </body>
+</html>
