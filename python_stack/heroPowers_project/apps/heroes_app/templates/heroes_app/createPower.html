@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create a Power</title>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h1>Add a new power</h1>
+        <form action="{% url 'power_create' %}" method='post'>
+            {% csrf_token %}
+            <label for="power">Power Name:<input type="text" name="power" id="power"></label>
+            <input type="submit" value="Create">
+        </form>
+
+    </body>
+</html>

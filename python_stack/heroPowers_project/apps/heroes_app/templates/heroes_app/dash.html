@@ -13,3 +13,6 @@
                 <p style='color: green'>Logged in as {{ request.session.user_first_name }}</p>
         </div>
         <h2>Justice League</h2>
+
+        <p><a href="{% url 'my_hero' %}">Add Heroes</a> |  <a href="{% url 'my_power' %}">Add Powers</a> | <a href="{% url 'my_logout'%}">Logout</a></p>
+        
