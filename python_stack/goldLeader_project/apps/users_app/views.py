@@ -43,8 +43,11 @@ def sessionCheck(request):
 def dashboard(request):
     if sessionCheck(request)==False:
         return redirect ('/')
-    messages.success(request, 'Successfully logged in!')
-    return render(request, 'users_app/dash.html')
+    # player = User.objects.get(id=id)
+    # confirm = 'Successfully logged in as {}!'.format(request.session.user_first_name)
+    # messages.success(request, confirm)
+    context = {'players' : User.objects.all().order_by('-gold').values()[:5]}
+    return render(request, 'users_app/dash.html', context)
 
 def logout(request):
     request.session.flush()
@@ -54,15 +57,18 @@ def showAll(request):
     if sessionCheck(request)==False:
         return redirect ('/')
     
-    # context = {'players' : User.objects.all().order_by('-gold').values()
-        # 'id' : 'user_id',
-        # 'first_name' : players.first_name,
-        # 'last_name' : players.last_name,
-        # 'gold' : players.gold,
-        # 'last' : players.updated_at
-    # }
-    return render(request, 'users_app/allUsers.html', {'players' : User.objects.all()})
+    context = {'players' : User.objects.all().order_by('-gold').values()}
+    return render(request, 'users_app/allUsers.html', context)
 
 def show(request, id):
-    return render(request, 'users_app/showUser.html', {"user": User.objects.get(id=id)})
+    player = User.objects.get(id=id)
+    activities = str(player.activity).split(';')
+    context = {
+        "player": User.objects.get(id=id),
+        "history": activities
+    }
+    return render(request, 'users_app/showUser.html', context)
+
+
+    
  

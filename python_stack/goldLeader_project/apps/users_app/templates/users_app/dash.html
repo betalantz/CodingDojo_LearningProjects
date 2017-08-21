@@ -8,9 +8,23 @@
     </head>
     <body>
         <h1>Dashboard</h1>
-         
-        <a href="{% url 'my_game'%}">Play</a>
-        <a href="{% url 'my_showAll'%}">See all players</a>
-        <a href="{% url 'my_logout'%}">Logout</a>
+        
+        <div class="confirm">
+                <p style='color: green'>Logged in as {{ request.session.user_first_name }}</p>
+        </div>
+        <h2>Hall of Fame</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Gold</th>
+            </tr>
+            {% for player in players %}
+            <tr>
+                <td><a href={% url 'my_show' player.id %}>{{ player.first_name }} {{ player.last_name }}</a></td>
+                <td>{{ player.gold }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p><a href="{% url 'my_game'%}">Play</a> |  <a href="{% url 'my_showAll'%}">See all players</a> | <a href="{% url 'my_logout'%}">Logout</a></p>
     </body>
 </html>

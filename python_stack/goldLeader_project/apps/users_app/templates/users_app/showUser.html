@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Users Show</title>
+        <title>Show Player</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>User {{ user.id }}</h1>
+        <h1>Player {{ player.id }}</h1>
             <div>
                 <p></p>
-                <p>Full name: {{ user.first_name }} {{ user.last_name }}</a></p>
-                <p>Email: {{ user.email }}</p>
-                <p>Created at: {{ user.created_at }}</p>
+                <p>Full name: {{ player.first_name }} {{ player.last_name }}</a></p>
+                <p>Email: {{ player.email }}</p>
+                <p>Created at: {{ player.created_at }}</p>
             </div>
+            <div style='outline: thin solid black;
+            height: 450px; width: 450px'>
+            <h6>Game history:</h6>
+            {% for event in history %}
+                <p>{{event}}</p>
+            {%endfor%}
+        </div>
             <div>
-                <p><a href={% url 'my_index' %}>Home</a> | <a href={% url 'my_edit' user.id %}>Edit</a> | <a href={% url 'my_destroy' user.id %}>Delete</a></p>
+                <p><a href="{% url 'my_dashboard'%}">Go Back</a></p>
             </div>
     </body>
 </html>
