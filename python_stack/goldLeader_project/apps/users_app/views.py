@@ -53,7 +53,15 @@ def logout(request):
 def showAll(request):
     if sessionCheck(request)==False:
         return redirect ('/')
-    return render(request, 'users_app/allUsers.html', {"users_list": User.objects.all()})
+    
+    # context = {'players' : User.objects.all().order_by('-gold').values()
+        # 'id' : 'user_id',
+        # 'first_name' : players.first_name,
+        # 'last_name' : players.last_name,
+        # 'gold' : players.gold,
+        # 'last' : players.updated_at
+    # }
+    return render(request, 'users_app/allUsers.html', {'players' : User.objects.all()})
 
 def show(request, id):
     return render(request, 'users_app/showUser.html', {"user": User.objects.get(id=id)})

@@ -11,17 +11,17 @@
                 <th>id</th>
                 <th>Name</th>
                 <th>Gold</th>
-                <th>Created At</th>
+                <th>Last played</th>
             </tr>
-            {% for user in users_list %}
+            {% for player in players %}
             <tr>
-                <td>{{ user.id }}</td>
-                <td><a href={% url 'my_show' user.id %}>{{ user.first_name }} {{ user.last_name }}</a></td>
-                <td>{{ user.gold }}</td>
-                <td>{{ user.created_at }}</td>
+                <td>{{ player.id }}</td>
+                <td><a href={% url 'my_show' player.id %}>{{ player.first_name }} {{ player.last_name }}</a></td>
+                <td>{{ player.gold }}</td>
+                <td>{{ player.updated_at }}</td>
             </tr>
             {% endfor %}
         </table>
-        <a href="{% url 'dashboard'%}">Go Back</a>
+        <a href="{% url 'my_dashboard'%}">Go Back</a>
     </body>
 </html>
