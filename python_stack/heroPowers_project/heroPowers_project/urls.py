@@ -21,6 +21,6 @@ def test(request):
 
 
 urlpatterns = [
-    # url(r'^', include('apps.login_app.urls')),
+    url(r'^', include('apps.login_app.urls')),
     url(r'^', include('apps.heroes_app.urls')),
 ]

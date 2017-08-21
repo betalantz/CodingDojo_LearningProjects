@@ -5,7 +5,9 @@ def test(request):
     print '>'*20, 'welcome to heroes_app urls'
 
 urlpatterns = [
-    url(r'^$', views.test),
+    # url(r'^$', views.test),
+    url(r'^dashboard/$', views.dashboard, name='my_dashboard'),
+
     # url(r'^$', views.index),
     # url(r'^users/$', views.index, name='my_index'),
     # url(r'^users/new', views.new, name='my_new'),
