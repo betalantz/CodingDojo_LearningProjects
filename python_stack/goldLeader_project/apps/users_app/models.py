@@ -66,8 +66,8 @@ class User(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    gold = models.IntegerField()
-    activity = models.TextField()
+    gold = models.IntegerField(default=0)
+    activity = models.TextField(default='')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     # *************************
@@ -76,4 +76,4 @@ class User(models.Model):
     objects = UserManager()
     # *************************
     def __repr__(self):
-        return "<User object: {} {} {} {}>".format(self.first_name, self.last_name, self.email, self.password)
+        return "<User object: {} {} {}>".format(self.first_name, self.gold, self.activity)

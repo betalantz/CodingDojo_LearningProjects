@@ -7,7 +7,7 @@
         <link href="css/style.css" rel="stylesheet"> -->
     </head>
     <body>
-        <p>Your Gold: {{request.session.gold}}</p>
+        <p>Your Gold: {{ gold }}</p>
 
         <div style='outline: thin solid black;
             height: 200px; width: 200px; display: inline-block; text-align: center'>
@@ -51,10 +51,10 @@
         </div>
         <div style='outline: thin solid black;
             height: 450px; width: 450px'>
-            {% for event in request.session.activities %}
+            {% for event in activity %}
                 <p>{{event}}</p>
             {%endfor%}
         </div>
-        <a href="{% url 'my_return'%}">Go Back</a>
+        <a href="{% url 'my_dashboard'%}">Go Back</a>
     </body>
 </html>
