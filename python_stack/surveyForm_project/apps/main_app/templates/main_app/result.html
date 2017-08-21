@@ -9,6 +9,9 @@
     </head>
     <body>
         <h1>Submitted Info</h1>
+        <div id='notice'>
+            <h4>Thanks for submitting your survey.  This form has been submitted {{ request.session.counter }} times.</h4>
+        </div>
         <p>Name: {{ request.session.name }}</p>
         <p>Location: {{ request.session.location }}</p>
         <p>Favorite Language: {{ request.session.language }}</p>

@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}" media="screen" title="no title">   
     </head>
     <body>
-        <form action='/process/' method='post'>
+        <form class='survey' action='/process/' method='post'>
             {% csrf_token %}
             <p>Your Name: <input type='text'name='name'></p>
             <p>Dojo Location: <select name="location">

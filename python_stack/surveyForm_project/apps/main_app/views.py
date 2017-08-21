@@ -11,9 +11,13 @@ def index(request):
 
 def process(request):
     try:
+        request.session['counter'] += 1
+    except:
+        request.session['counter'] = 1
+    try:
         request.session['name'] = request.POST['name']
     except:
-        return redirect ('/')
+        return redirect (reverse('index'))
     request.session['location'] = request.POST['location']
     request.session['language'] = request.POST['language']
     try:
@@ -25,7 +29,7 @@ def process(request):
     print request.session['location']
     print request.session['language']
     print request.session['comment']
-    return redirect(reverse(result))
+    return redirect(reverse('result'))
 
 def result(request):
     return render (request, "main_app/result.html")
