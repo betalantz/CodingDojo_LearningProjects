@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dojo Survey Result</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <!-- The line above tells Django to be ready to listen for static files -->
+        <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}" media="screen" title="no title">   
+    </head>
+    <body>
+        <h1>Submitted Info</h1>
+        <p>Name: {{ request.session.name }}</p>
+        <p>Location: {{ request.session.location }}</p>
+        <p>Favorite Language: {{ request.session.language }}</p>
+        <p>Comment: {{ request.session.comment }}</p>
+        <input type=button onClick="location.href='/'" value='Go Back'>    
+    </body>
+</html>
