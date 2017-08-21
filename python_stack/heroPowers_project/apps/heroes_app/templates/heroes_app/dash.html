@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Heroes and Powers</title>
         <meta charset="UTF-8">
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet"> -->
@@ -13,6 +13,22 @@
                 <p style='color: green'>Logged in as {{ request.session.user_first_name }}</p>
         </div>
         <h2>Justice League</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Powers</th>
+                <th>Likes</th>
+                <th>Actions</th>
+            </tr>
+            {% for hero in heroes %}
+            <tr>
+                <td><a href={% url 'my_show' hero.id %}>{{ hero.hero_name }} </a></td>
+                <td>{{ hero.powers }}</td>
+                <td>{{ hero.likes }}</td>
+                <td><a href={% url 'Like' hero.id %}>Like</a> <a href={% url 'Unlike' hero.id %}>Unlike</a> </td>
+            </tr>
+            {% endfor %}
+        </table>
 
         <p><a href="{% url 'my_hero' %}">Add Heroes</a> |  <a href="{% url 'my_power' %}">Add Powers</a> | <a href="{% url 'my_logout'%}">Logout</a></p>
         

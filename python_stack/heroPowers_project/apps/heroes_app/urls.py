@@ -14,8 +14,9 @@ urlpatterns = [
     url(r'^heroes/createHero', views.createHero, name='hero_create'),
     url(r'^heroes/addPower', views.addPower, name='my_power'),
     url(r'^heroes/createPower', views.createPower, name='power_create'),
-    # url(r'^users/(?P<id>\d+)/$', views.show, name='my_show'),
-    # url(r'^users/(?P<id>\d+)/edit/$', views.edit, name='my_edit'),
+    url(r'^heroes/(?P<id>\d+)/$', views.show, name='my_show'),
+    url(r'^heroes/(?P<id>\d+)/like/$', views.addLike, name='Like'),
+    url(r'^heroes/(?P<id>\d+)/unlike/$', views.subLike, name='Unlike'),
     # url(r'^users/(?P<id>\d+)/destroy/$', views.destroy, name='my_destroy'),
 
 ]

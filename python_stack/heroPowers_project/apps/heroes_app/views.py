@@ -11,11 +11,13 @@ def test(request):
 def dashboard(request):
     if sessionCheck(request)==False:
         return redirect ('/')
+    context = {'heroes' : Hero.objects.all().order_by('-likes').values()}
+
     # player = User.objects.get(id=id)
     # confirm = 'Successfully logged in as {}!'.format(request.session.user_first_name)
     # messages.success(request, confirm)
     # context = {'players' : User.objects.all().order_by('-gold').values()[:5]}
-    return render(request, 'heroes_app/dash.html')
+    return render(request, 'heroes_app/dash.html', context)
 
 def addHero(request):
     return render(request, 'heroes_app/createHero.html')
@@ -34,3 +36,12 @@ def createPower(request):
     Power.objects.create(power=request.POST['power'])
     print Power.objects.last()
     return redirect('/heroes/dashboard')
+
+def show(request,id):
+    return render(request, 'heroes_app/heropage.html', {"hero": Hero.objects.get(id=id)})
+
+def addLike(request, id):
+    pass
+
+def subLike(request, id):
+    pass
