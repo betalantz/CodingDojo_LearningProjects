@@ -23,7 +23,9 @@
             {% for hero in heroes %}
             <tr>
                 <td><a href={% url 'my_show' hero.id %}>{{ hero.hero_name }} </a></td>
-                <td>{{ hero.powers }}</td>
+                <td>{% for x in hero.powers.all %}
+                        {{x.power}}
+                    {% endfor %}</td>
                 <td>{{ hero.likes }}</td>
                 <td><a href={% url 'Like' hero.id %}>Like</a> <a href={% url 'Unlike' hero.id %}>Unlike</a> </td>
             </tr>

@@ -11,7 +11,9 @@ def test(request):
 def dashboard(request):
     if sessionCheck(request)==False:
         return redirect ('/')
-    context = {'heroes' : Hero.objects.all().order_by('-likes').values()}
+    context = {
+        'heroes' : Hero.objects.all().order_by('-likes').values()
+        }
 
     # player = User.objects.get(id=id)
     # confirm = 'Successfully logged in as {}!'.format(request.session.user_first_name)
@@ -38,10 +40,26 @@ def createPower(request):
     return redirect('/heroes/dashboard')
 
 def show(request,id):
-    return render(request, 'heroes_app/heropage.html', {"hero": Hero.objects.get(id=id)})
+    context = {
+        "hero": Hero.objects.get(id=id),
+        "powers_list": Power.objects.all()
+    }
+    return render(request, 'heroes_app/heropage.html', context)
+
+def giveHeroPower(request, id):
+    hero = Hero.objects.get(id=id)
+    selection = request.POST['newPower']
+    pow = Power.objects.get(id=selection)
+    pow.heroes.add(Hero.objects.get(id=id))
+    pow.save()
+    return redirect('/heroes/dashboard')
+
+    # return redirect(reverse('my_show', kwargs={'id': id}))
 
 def addLike(request, id):
-    pass
-
+    hero = Hero.objects.get(id=id)
+    hero.likes += 1
+    hero.save()
+    
 def subLike(request, id):
     pass

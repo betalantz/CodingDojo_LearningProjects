@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^heroes/(?P<id>\d+)/$', views.show, name='my_show'),
     url(r'^heroes/(?P<id>\d+)/like/$', views.addLike, name='Like'),
     url(r'^heroes/(?P<id>\d+)/unlike/$', views.subLike, name='Unlike'),
+    url(r'^heroes/(?P<id>\d+)/givePower/$', views.giveHeroPower, name='givePower'),
     # url(r'^users/(?P<id>\d+)/destroy/$', views.destroy, name='my_destroy'),
 
 ]

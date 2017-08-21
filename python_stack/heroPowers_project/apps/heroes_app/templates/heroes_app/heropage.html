@@ -9,9 +9,19 @@
             <p></p>
             <p>Hero name: {{ hero.hero_name }} </p>
             <p>Likes: {{ hero.likes }}</p>
-            <p>Powers: {{ hero.powers }}</p>
+            
+            <p>Powers: {% for x in hero.powers.all%}
+                <p>{{x.power}}</p>
+                {%endfor%}</p>
         </div>
-        <div>
-        </div>
+        <form class='' action='{% url 'givePower' id=hero.id %}' method='post'>
+            {% csrf_token %}
+            <p>Add a power: <select name="newPower">
+                {% for item in powers_list %}   
+                    <option value="{{ item.id }}">{{ item.power }}</option>
+                {% endfor %}
+            </select></p>  
+            <input type='submit' value='Submit'>            
+        </form>
     </body>
 </html>
