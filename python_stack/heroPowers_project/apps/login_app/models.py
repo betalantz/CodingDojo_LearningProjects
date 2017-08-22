@@ -67,10 +67,7 @@ class User(models.Model):
     password = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
-    # *************************
-    # Connect an instance of BlogManager to our User model overwriting
-    # the old hidden objects key with a new one with extra properties!!!
+
     objects = UserManager()
-    # *************************
     def __repr__(self):
         return "<User object: {} {} {} {}>".format(self.first_name, self.last_name, self.email, self.password)

@@ -15,11 +15,6 @@ def dashboard(request):
     context = {
         'heroes' : Hero.objects.all()
         }
-
-    # player = User.objects.get(id=id)
-    # confirm = 'Successfully logged in as {}!'.format(request.session.user_first_name)
-    # messages.success(request, confirm)
-    # context = {'players' : User.objects.all().order_by('-gold').values()[:5]}
     return render(request, 'heroes_app/dash.html', context)
 
 def addHero(request):
@@ -65,12 +60,20 @@ def giveHeroPower(request, id):
 
 def addLike(request, id):
     hero = Hero.objects.get(id=id)
-    hero.likes += 1
+    hero.allLikes += 1
     hero.save()
+    user_id = request.session['user_id']
+    like_stat = User.objects.get(id=user_id)
+    hero.userLikes.add(like_stat)
     return redirect('/heroes/dashboard')
 
 def subLike(request, id):
     hero = Hero.objects.get(id=id)
-    hero.likes -= 1
+    hero.allLikes -= 1
     hero.save()
+    user_id = request.session['user_id']
+    like_stat = User.objects.get(id=user_id)
+    hero.userLikes.remove(like_stat)
     return redirect('/heroes/dashboard')
+
+
