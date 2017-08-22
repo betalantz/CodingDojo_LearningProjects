@@ -60,6 +60,10 @@ def addLike(request, id):
     hero = Hero.objects.get(id=id)
     hero.likes += 1
     hero.save()
-    
+    return redirect('/heroes/dashboard')
+
 def subLike(request, id):
-    pass
+    hero = Hero.objects.get(id=id)
+    hero.likes -= 1
+    hero.save()
+    return redirect('/heroes/dashboard')
