@@ -6,3 +6,6 @@ def test(request):
 
 def index(request):
     return render(request, "login_app/index.html") 
+
+def register(request):
+    print request.POST, 'yyhhy'

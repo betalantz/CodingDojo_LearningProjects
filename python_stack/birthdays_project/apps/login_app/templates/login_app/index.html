@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Login & Reg | Home</title>
         <meta charset="UTF-8">
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet"> -->
@@ -15,8 +15,27 @@
             <label for="email">Email:<input type="text" name="email" id="email"></label>
             <label for="password">Password:<input type="password" name="psw" id="psw"></label>
             <label for="confirm">Confirm pw:<input type="password" name="cfm" id="cfm"></label>
-            <label for="bday">Birtdate:<input type="date" name="bday" id="bday"></label>
             <input type="submit" value="Register">
+        </form>
+        <hr>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                {%if message.tags == 'error'%}
+                    <li style='color: red'>{{ message }}</li>
+                {% elif message.tags == 'success'%}
+                    <li style='color: green'>{{ message }}</li>
+                {% endif %}                   
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <hr>
+        <h1>Login</h1>
+        <form action="{% url 'my_login' %}" method='post'>
+            {% csrf_token %}
+            <label for="email">Email:<input type="text" name="email" id="email"></label>
+            <label for="password">Password:<input type="password" name="psw" id="psw"></label>
+            <input type="submit" value="Login">
         </form>
     </body>
 </html>

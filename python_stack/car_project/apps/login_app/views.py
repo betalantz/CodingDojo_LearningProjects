@@ -5,4 +5,4 @@ def test(request):
 
 
 def index(request):
-    pass
+    return render(request, "login_app/index.html") 

@@ -30,7 +30,7 @@ def login(request):
 
     storage = messages.get_messages(request)
     storage.used = True
-    return redirect('/heroes/dashboard')
+    return redirect('/success')
 
 def sessionCheck(request):
     try:
@@ -38,12 +38,12 @@ def sessionCheck(request):
     except:
         return False
 
-# def success(request):
-#     if sessionCheck(request)==False:
-#         return redirect ('/')
-#     messages.success(request, 'Successfully logged in!')
-#     return render(request, 'login_app/dash.html') #should be 'heroes_app/dash.html' ??
+def success(request):
+    if sessionCheck(request)==False:
+        return redirect ('/')
+    messages.success(request, 'Successfully logged in!')
+    return render(request,'login_app/dash.html')
 
 def logout(request):
-    request.session.flush() #also check .clear() method. What are advantges?
+    request.session.flush()
     return redirect ('/')

@@ -6,6 +6,6 @@ def test(request):
     print "+"*20, "login urls"
 
 urlpatterns = [
-    url(r'^', views.index),
-    url(r'^register/$', views.register, name='my_register'),
+    url(r'^$', views.index),
+    url(r'^register/$', test, name='my_register'),
 ]
