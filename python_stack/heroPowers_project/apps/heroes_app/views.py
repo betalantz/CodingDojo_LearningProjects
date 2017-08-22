@@ -82,3 +82,10 @@ def subLike(request, id):
     return redirect('/heroes/dashboard')
 
 
+def getLikes(request, id):
+    user_id = request.session['user_id']
+    liked_list = Power.objects.filter(user_id)
+    print liked_list
+    for hero in liked_list:
+        
+    pass

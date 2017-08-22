@@ -15,8 +15,21 @@
             <label for="email">Email:<input type="text" name="email" id="email"></label>
             <label for="password">Password:<input type="password" name="psw" id="psw"></label>
             <label for="confirm">Confirm pw:<input type="password" name="cfm" id="cfm"></label>
-            <label for="bday">Birtdate:<input type="date" name="bday" id="bday"></label>
+            <label for="bday">Birthdate:<input type="date" name="bday" id="bday"></label>
             <input type="submit" value="Register">
         </form>
+        <hr>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                {%if message.tags == 'error'%}
+                    <li style='color: red'>{{ message }}</li>
+                {% elif message.tags == 'success'%}
+                    <li style='color: green'>{{ message }}</li>
+                {% endif %}                   
+            {% endfor %}
+        </ul>
+        {% endif %}
+
     </body>
 </html>
