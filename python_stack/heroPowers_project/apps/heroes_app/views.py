@@ -11,8 +11,9 @@ def test(request):
 def dashboard(request):
     if sessionCheck(request)==False:
         return redirect ('/')
+    
     context = {
-        'heroes' : Hero.objects.all().order_by('-likes').values()
+        'heroes' : Hero.objects.all()
         }
 
     # player = User.objects.get(id=id)
@@ -52,9 +53,15 @@ def giveHeroPower(request, id):
     pow = Power.objects.get(id=selection)
     pow.heroes.add(Hero.objects.get(id=id))
     pow.save()
+    
+    try:
+        request.session['addMore'] = request.POST['addMore']
+    except:
+        request.session['addMore'] = None
+    if request.session['addMore'] != None:
+            return redirect(reverse('my_show', kwargs={'id': id}))
     return redirect('/heroes/dashboard')
 
-    # return redirect(reverse('my_show', kwargs={'id': id}))
 
 def addLike(request, id):
     hero = Hero.objects.get(id=id)
