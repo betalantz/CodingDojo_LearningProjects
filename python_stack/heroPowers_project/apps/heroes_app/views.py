@@ -65,6 +65,10 @@ def addLike(request, id):
     user_id = request.session['user_id']
     like_stat = User.objects.get(id=user_id)
     hero.userLikes.add(like_stat)
+    try:
+        request.session['liked']
+    except:
+        request.session['liked'] = True
     return redirect('/heroes/dashboard')
 
 def subLike(request, id):
@@ -74,6 +78,7 @@ def subLike(request, id):
     user_id = request.session['user_id']
     like_stat = User.objects.get(id=user_id)
     hero.userLikes.remove(like_stat)
+    request.session['liked']=False
     return redirect('/heroes/dashboard')
 
 

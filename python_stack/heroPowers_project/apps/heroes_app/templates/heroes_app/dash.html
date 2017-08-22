@@ -25,7 +25,11 @@
                 <td><a href={% url 'my_show' hero.id %}>{{ hero.hero_name }} </a></td>
                 <td>{% for x in hero.powers.all %} {{ x.power }}, {% endfor %}</td>
                 <td>{{ hero.allLikes }}</td>
-                <td><a href={% url 'Like' hero.id %}>Like</a> <a href={% url 'Unlike' hero.id %}>Unlike</a> </td>
+                <td>{% if request.session.liked == False %}
+                    <a href={% url 'Like' hero.id %}>Like</a> 
+                {% else %}   
+                    <a href={% url 'Unlike' hero.id %}>Unlike</a> 
+                {% endif %}</td>
             </tr>
             {% endfor %}
         </table>
