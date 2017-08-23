@@ -22,4 +22,5 @@ def test(request):
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('apps.login_app.urls')),
+    url(r'^cars/', include('apps.car_app.urls')),
 ]

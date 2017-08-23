@@ -7,7 +7,5 @@ def test(request):
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^register/$', views.register, name='my_register'),
-    url(r'^login/$', views.login, name='my_login'),
-    url(r'^logout/$', views.logout, name='my_logout'),
+    url(r'^addCar$', views.addCar, name='addCar'),
 ]

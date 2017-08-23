@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create a car</title>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h1>Add a new car</h1>
+        <form action="{% url 'carSubmit' %}" method='post'>
+            {% csrf_token %}
+            <input type="text" name="make" placeholder="Enter make of car">
+            <input type="text" name="model" placeholder="Enter model of car">
+            <input type="number" name="year" placeholder="Enter year of car">
+            <input type="submit" value="add car">
+        </form>
+
+    </body>
+</html>
