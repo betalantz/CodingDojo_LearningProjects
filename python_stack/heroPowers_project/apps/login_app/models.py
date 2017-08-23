@@ -40,7 +40,6 @@ class UserManager(models.Manager):
             first_name=postData['first_name'],
             last_name=postData['last_name'],
             email=postData['email'],
-            birthday=postData['birthday'],
             password=hash1
         )
         return user
@@ -64,7 +63,6 @@ class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
-    birthday=models.DateField(auto_now_add=False)
     password = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
