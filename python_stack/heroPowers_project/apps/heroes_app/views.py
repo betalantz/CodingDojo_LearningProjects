@@ -13,8 +13,10 @@ def dashboard(request):
         return redirect ('/')
     
     context = {
-        'heroes' : Hero.objects.all()
+        'heroes' : Hero.objects.all(),
+        'user' : User.objects.get(id=request.session['user_id'])
         }
+    print context['user'].heroLikes.all()
     return render(request, 'heroes_app/dash.html', context)
 
 def addHero(request):
@@ -65,10 +67,10 @@ def addLike(request, id):
     user_id = request.session['user_id']
     like_stat = User.objects.get(id=user_id)
     hero.userLikes.add(like_stat)
-    try:
-        request.session['liked']
-    except:
-        request.session['liked'] = True
+    # try:
+    #     request.session['liked']
+    # except:
+    #     request.session['liked'] = True
     return redirect('/heroes/dashboard')
 
 def subLike(request, id):
@@ -78,14 +80,13 @@ def subLike(request, id):
     user_id = request.session['user_id']
     like_stat = User.objects.get(id=user_id)
     hero.userLikes.remove(like_stat)
-    request.session['liked']=False
+    # request.session['liked']=False
     return redirect('/heroes/dashboard')
 
 
-def getLikes(request, id):
-    user_id = request.session['user_id']
-    liked_list = Power.objects.filter(user_id)
-    print liked_list
-    for hero in liked_list:
-        
-    pass
+# def getLikes(request, id):
+#     user_id = request.session['user_id']
+#     liked_list = Power.objects.filter(user_id)
+#     print liked_list
+#     for hero in liked_list:
+#     pass

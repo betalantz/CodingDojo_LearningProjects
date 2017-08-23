@@ -40,6 +40,7 @@ class UserManager(models.Manager):
             first_name=postData['first_name'],
             last_name=postData['last_name'],
             email=postData['email'],
+            birthday=postData['birthday'],
             password=hash1
         )
         return user
@@ -57,17 +58,16 @@ class UserManager(models.Manager):
             results['status']=False
         else:
             results['user']=users[0]
-            print results['user']
         return results
 
 class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
+    birthday=models.DateField(auto_now_add=False)
     password = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
-
     objects = UserManager()
     def __repr__(self):
         return "<User object: {} {} {} {}>".format(self.first_name, self.last_name, self.email, self.password)

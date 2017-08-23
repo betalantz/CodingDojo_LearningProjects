@@ -7,14 +7,15 @@
         <link href="css/style.css" rel="stylesheet"> -->
     </head>
     <body>
-        <h1>Registration</h1>
+        <h2>Registration</h2>
         <form action="{% url 'my_register' %}" method='post'>
             {% csrf_token %}
-            <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
-            <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
-            <label for="email">Email:<input type="text" name="email" id="email"></label>
-            <label for="password">Password:<input type="password" name="psw" id="psw"></label>
-            <label for="confirm">Confirm pw:<input type="password" name="cfm" id="cfm"></label>
+        <p>First Name:<input type="text" name="first_name" placeholder="Enter your first name."></p>
+        <p>Last Name:<input type="text" name="last_name" placeholder="Enter your last name."></p>
+        <p>Birthday:<input type="date" name="birthday" placeholder="Enter your birthday."></p>
+        <p>Email:<input type="text" name="email" placeholder="Enter your email."></p>
+        <p>Password:<input type="password" name="psw" placeholder="Enter a password."></p>
+        <p>Confirm pw:<input type="password" name="cfm" placeholder="Confirm your password."></p>
             <input type="submit" value="Register">
         </form>
         <hr>
@@ -30,11 +31,11 @@
         </ul>
         {% endif %}
         <hr>
-        <h1>Login</h1>
+        <h2>Login</h2>
         <form action="{% url 'my_login' %}" method='post'>
             {% csrf_token %}
-            <label for="email">Email:<input type="text" name="email" id="email"></label>
-            <label for="password">Password:<input type="password" name="psw" id="psw"></label>
+        <p>Email:<input type="text" name="email" placeholder="Enter your email"></p>
+        <p>Password:<input type="password" name="psw" placeholder="Enter your password"></p>
             <input type="submit" value="Login">
         </form>
     </body>

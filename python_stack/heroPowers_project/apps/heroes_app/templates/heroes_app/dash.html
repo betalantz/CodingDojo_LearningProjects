@@ -8,7 +8,6 @@
     </head>
     <body>
         <h1>Dashboard</h1>
-        
         <div class="confirm">
                 <p style='color: green'>Logged in as {{ request.session.user_first_name }}</p>
         </div>
@@ -25,7 +24,7 @@
                 <td><a href={% url 'my_show' hero.id %}>{{ hero.hero_name }} </a></td>
                 <td>{% for x in hero.powers.all %} {{ x.power }}, {% endfor %}</td>
                 <td>{{ hero.allLikes }}</td>
-                <td>{% if request.session.liked == False %}
+                <td>{% if hero not in user.heroLikes.all %}
                     <a href={% url 'Like' hero.id %}>Like</a> 
                 {% else %}   
                     <a href={% url 'Unlike' hero.id %}>Unlike</a> 
