@@ -69,6 +69,10 @@ def show(request, id):
     }
     return render(request, 'users_app/showUser.html', context)
 
+def delete(request):
+    my_id = request.session['user_id']
+    player = User.objects.get(id=my_id)
+    player.delete()
+    return redirect ('/')
 
-    
  

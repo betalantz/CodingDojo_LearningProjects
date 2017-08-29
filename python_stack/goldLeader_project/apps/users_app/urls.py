@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^logout/$', views.logout, name='my_logout'),
     url(r'^showAll/$', views.showAll, name='my_showAll'),
     url(r'^show/(?P<id>\d+)/$', views.show, name='my_show'),
+    url(r'^delete/$', views.delete, name='my_delete'),
 
 ]

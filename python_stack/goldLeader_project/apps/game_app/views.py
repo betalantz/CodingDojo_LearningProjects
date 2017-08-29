@@ -28,6 +28,8 @@ def game(request):
     # except:
     #     player.activity = []
     # player.save()
+    if player.gold < 0:
+        return render(request, "game_app/broke.html")
     return render(request, "game_app/game.html", context)
 
 def process(request):
@@ -51,8 +53,6 @@ def process(request):
     
     addActivity(player, message)
     player.save()
-        # for i in range(0, len(request.session['activities'])):
-        #     request.session['activities'][i] = 'hodor'
     return redirect('/game')
 
 def addActivity(player, message):
@@ -61,6 +61,8 @@ def addActivity(player, message):
     newActivities = ';'.join(activities)
     player.activity = newActivities
     player.save()
+
+    
 
 # def saveGame(request):
 #     g = User.objects.get(id=request.session['user_id'])

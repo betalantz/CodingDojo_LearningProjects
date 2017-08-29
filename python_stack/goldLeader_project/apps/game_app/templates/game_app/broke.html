@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h1>Purgatory</h1>
+        
+        <div class="confirm">
+                <h2 style='color: red'>Sorry, {{ request.session.user_first_name }}, you lost all your money gambling and you will now be deleted from the game.</h2>
+        </div>
+        <p><a href={% url 'my_delete' %}>Start over</a> </p>
+    </body>
+</html>
