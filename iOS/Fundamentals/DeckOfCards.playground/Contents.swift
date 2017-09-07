@@ -44,7 +44,7 @@ class Deck {
     }
     func deal() -> Card? {
         if !self.isEmpty() {
-            return self.cards.remove(at: self.cards.count - 1)
+            return self.cards.remove(at: 0)
         }
         return nil
     }
