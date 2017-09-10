@@ -30,3 +30,6 @@ print("The maximum value \(UInt32.max)")
 print("The minimum value \(UInt32.min)")
 
 print("Division \(1.0/3)")
+
+var x = 8 % 3
+var y = 8 / 3
