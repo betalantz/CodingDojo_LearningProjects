@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF1AD0521F68798700066BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AD0511F68798700066BBE /* AppDelegate.swift */; };
+		BF1AD0541F68798700066BBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AD0531F68798700066BBE /* ViewController.swift */; };
+		BF1AD0571F68798700066BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1AD0551F68798700066BBE /* Main.storyboard */; };
+		BF1AD0591F68798700066BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1AD0581F68798700066BBE /* Assets.xcassets */; };
+		BF1AD05C1F68798700066BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1AD05A1F68798700066BBE /* LaunchScreen.storyboard */; };
+		BF1AD0671F68798700066BBE /* AgingPeopleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AD0661F68798700066BBE /* AgingPeopleTests.swift */; };
+		BF1AD0721F68798700066BBE /* AgingPeopleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1AD0711F68798700066BBE /* AgingPeopleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF1AD0631F68798700066BBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF1AD0461F68798700066BBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF1AD04D1F68798700066BBE;
+			remoteInfo = AgingPeople;
+		};
+		BF1AD06E1F68798700066BBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF1AD0461F68798700066BBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF1AD04D1F68798700066BBE;
+			remoteInfo = AgingPeople;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF1AD04E1F68798700066BBE /* AgingPeople.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgingPeople.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1AD0511F68798700066BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF1AD0531F68798700066BBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF1AD0561F68798700066BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF1AD0581F68798700066BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF1AD05B1F68798700066BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF1AD05D1F68798700066BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF1AD0621F68798700066BBE /* AgingPeopleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgingPeopleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1AD0661F68798700066BBE /* AgingPeopleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgingPeopleTests.swift; sourceTree = "<group>"; };
+		BF1AD0681F68798700066BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF1AD06D1F68798700066BBE /* AgingPeopleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgingPeopleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1AD0711F68798700066BBE /* AgingPeopleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgingPeopleUITests.swift; sourceTree = "<group>"; };
+		BF1AD0731F68798700066BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF1AD04B1F68798700066BBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1AD05F1F68798700066BBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1AD06A1F68798700066BBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF1AD0451F68798700066BBE = {
+			isa = PBXGroup;
+			children = (
+				BF1AD0501F68798700066BBE /* AgingPeople */,
+				BF1AD0651F68798700066BBE /* AgingPeopleTests */,
+				BF1AD0701F68798700066BBE /* AgingPeopleUITests */,
+				BF1AD04F1F68798700066BBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF1AD04F1F68798700066BBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF1AD04E1F68798700066BBE /* AgingPeople.app */,
+				BF1AD0621F68798700066BBE /* AgingPeopleTests.xctest */,
+				BF1AD06D1F68798700066BBE /* AgingPeopleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF1AD0501F68798700066BBE /* AgingPeople */ = {
+			isa = PBXGroup;
+			children = (
+				BF1AD0511F68798700066BBE /* AppDelegate.swift */,
+				BF1AD0531F68798700066BBE /* ViewController.swift */,
+				BF1AD0551F68798700066BBE /* Main.storyboard */,
+				BF1AD0581F68798700066BBE /* Assets.xcassets */,
+				BF1AD05A1F68798700066BBE /* LaunchScreen.storyboard */,
+				BF1AD05D1F68798700066BBE /* Info.plist */,
+			);
+			path = AgingPeople;
+			sourceTree = "<group>";
+		};
+		BF1AD0651F68798700066BBE /* AgingPeopleTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF1AD0661F68798700066BBE /* AgingPeopleTests.swift */,
+				BF1AD0681F68798700066BBE /* Info.plist */,
+			);
+			path = AgingPeopleTests;
+			sourceTree = "<group>";
+		};
+		BF1AD0701F68798700066BBE /* AgingPeopleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF1AD0711F68798700066BBE /* AgingPeopleUITests.swift */,
+				BF1AD0731F68798700066BBE /* Info.plist */,
+			);
+			path = AgingPeopleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF1AD04D1F68798700066BBE /* AgingPeople */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1AD0761F68798700066BBE /* Build configuration list for PBXNativeTarget "AgingPeople" */;
+			buildPhases = (
+				BF1AD04A1F68798700066BBE /* Sources */,
+				BF1AD04B1F68798700066BBE /* Frameworks */,
+				BF1AD04C1F68798700066BBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AgingPeople;
+			productName = AgingPeople;
+			productReference = BF1AD04E1F68798700066BBE /* AgingPeople.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF1AD0611F68798700066BBE /* AgingPeopleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1AD0791F68798700066BBE /* Build configuration list for PBXNativeTarget "AgingPeopleTests" */;
+			buildPhases = (
+				BF1AD05E1F68798700066BBE /* Sources */,
+				BF1AD05F1F68798700066BBE /* Frameworks */,
+				BF1AD0601F68798700066BBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF1AD0641F68798700066BBE /* PBXTargetDependency */,
+			);
+			name = AgingPeopleTests;
+			productName = AgingPeopleTests;
+			productReference = BF1AD0621F68798700066BBE /* AgingPeopleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF1AD06C1F68798700066BBE /* AgingPeopleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1AD07C1F68798700066BBE /* Build configuration list for PBXNativeTarget "AgingPeopleUITests" */;
+			buildPhases = (
+				BF1AD0691F68798700066BBE /* Sources */,
+				BF1AD06A1F68798700066BBE /* Frameworks */,
+				BF1AD06B1F68798700066BBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF1AD06F1F68798700066BBE /* PBXTargetDependency */,
+			);
+			name = AgingPeopleUITests;
+			productName = AgingPeopleUITests;
+			productReference = BF1AD06D1F68798700066BBE /* AgingPeopleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF1AD0461F68798700066BBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Betalantz;
+				TargetAttributes = {
+					BF1AD04D1F68798700066BBE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					BF1AD0611F68798700066BBE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BF1AD04D1F68798700066BBE;
+					};
+					BF1AD06C1F68798700066BBE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BF1AD04D1F68798700066BBE;
+					};
+				};
+			};
+			buildConfigurationList = BF1AD0491F68798700066BBE /* Build configuration list for PBXProject "AgingPeople" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF1AD0451F68798700066BBE;
+			productRefGroup = BF1AD04F1F68798700066BBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF1AD04D1F68798700066BBE /* AgingPeople */,
+				BF1AD0611F68798700066BBE /* AgingPeopleTests */,
+				BF1AD06C1F68798700066BBE /* AgingPeopleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF1AD04C1F68798700066BBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1AD05C1F68798700066BBE /* LaunchScreen.storyboard in Resources */,
+				BF1AD0591F68798700066BBE /* Assets.xcassets in Resources */,
+				BF1AD0571F68798700066BBE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1AD0601F68798700066BBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1AD06B1F68798700066BBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF1AD04A1F68798700066BBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1AD0541F68798700066BBE /* ViewController.swift in Sources */,
+				BF1AD0521F68798700066BBE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1AD05E1F68798700066BBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1AD0671F68798700066BBE /* AgingPeopleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1AD0691F68798700066BBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1AD0721F68798700066BBE /* AgingPeopleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF1AD0641F68798700066BBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF1AD04D1F68798700066BBE /* AgingPeople */;
+			targetProxy = BF1AD0631F68798700066BBE /* PBXContainerItemProxy */;
+		};
+		BF1AD06F1F68798700066BBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF1AD04D1F68798700066BBE /* AgingPeople */;
+			targetProxy = BF1AD06E1F68798700066BBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF1AD0551F68798700066BBE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF1AD0561F68798700066BBE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF1AD05A1F68798700066BBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF1AD05B1F68798700066BBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF1AD0741F68798700066BBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF1AD0751F68798700066BBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF1AD0771F68798700066BBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5995Q48X5V;
+				INFOPLIST_FILE = AgingPeople/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betalantz.AgingPeople;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF1AD0781F68798700066BBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5995Q48X5V;
+				INFOPLIST_FILE = AgingPeople/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betalantz.AgingPeople;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF1AD07A1F68798700066BBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5995Q48X5V;
+				INFOPLIST_FILE = AgingPeopleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betalantz.AgingPeopleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AgingPeople.app/AgingPeople";
+			};
+			name = Debug;
+		};
+		BF1AD07B1F68798700066BBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5995Q48X5V;
+				INFOPLIST_FILE = AgingPeopleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betalantz.AgingPeopleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AgingPeople.app/AgingPeople";
+			};
+			name = Release;
+		};
+		BF1AD07D1F68798700066BBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5995Q48X5V;
+				INFOPLIST_FILE = AgingPeopleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betalantz.AgingPeopleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AgingPeople;
+			};
+			name = Debug;
+		};
+		BF1AD07E1F68798700066BBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5995Q48X5V;
+				INFOPLIST_FILE = AgingPeopleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.betalantz.AgingPeopleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AgingPeople;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF1AD0491F68798700066BBE /* Build configuration list for PBXProject "AgingPeople" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1AD0741F68798700066BBE /* Debug */,
+				BF1AD0751F68798700066BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1AD0761F68798700066BBE /* Build configuration list for PBXNativeTarget "AgingPeople" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1AD0771F68798700066BBE /* Debug */,
+				BF1AD0781F68798700066BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1AD0791F68798700066BBE /* Build configuration list for PBXNativeTarget "AgingPeopleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1AD07A1F68798700066BBE /* Debug */,
+				BF1AD07B1F68798700066BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1AD07C1F68798700066BBE /* Build configuration list for PBXNativeTarget "AgingPeopleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1AD07D1F68798700066BBE /* Debug */,
+				BF1AD07E1F68798700066BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF1AD0461F68798700066BBE /* Project object */;
+}
