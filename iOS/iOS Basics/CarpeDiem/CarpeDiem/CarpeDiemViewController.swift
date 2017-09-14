@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class CarpeDiemViewController: UITableViewController, AddItemTableViewControllerDelegate {
-
-    var items = ["Stay in orbital hotel", "Make a long boat voyage", "Build aquaponics garden", "Dance"]
+    
+    var items = [CarpeDiemItem]()
+    
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchAllItems()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,7 +30,7 @@ class CarpeDiemViewController: UITableViewController, AddItemTableViewController
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row].text!
         return cell
     }
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -37,6 +40,14 @@ class CarpeDiemViewController: UITableViewController, AddItemTableViewController
         performSegue(withIdentifier: "EditItem", sender: indexPath)
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        managedObjectContext.delete(item)
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("\(error)")
+        }
         items.remove(at: indexPath.row)
         tableView.reloadData()
     }
@@ -52,8 +63,18 @@ class CarpeDiemViewController: UITableViewController, AddItemTableViewController
             addItemTableViewController.delegate = self
             let indexPath = sender as! NSIndexPath
             let item = items[indexPath.row]
-            addItemTableViewController.item = item
+            addItemTableViewController.item = item.text!
             addItemTableViewController.indexPath = indexPath
+        }
+    }
+    func fetchAllItems() {
+    
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CarpeDiemItem")
+        do {
+            let result = try managedObjectContext.fetch(request)
+            items = result as! [CarpeDiemItem]
+        } catch {
+            print("\(error)")
         }
     }
     func cancelButtonPressed(by controller: AddItemTableViewController) {
@@ -62,9 +83,21 @@ class CarpeDiemViewController: UITableViewController, AddItemTableViewController
     }
     func itemSaved(by controller: AddItemTableViewController, with text: String, at indexPath: NSIndexPath?) {
         if let ip = indexPath {
-            items[ip.row] = text
+            
+            let item = items[ip.row]
+            item.text = text
+            
         } else {
-        items.append(text)
+            
+            let item = NSEntityDescription.insertNewObject(forEntityName: "CarpeDiemItem", into: managedObjectContext) as! CarpeDiemItem
+            item.text = text
+            items.append(item)
+        }
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("\(error)")
         }
         tableView.reloadData()
         dismiss(animated: true, completion: nil)

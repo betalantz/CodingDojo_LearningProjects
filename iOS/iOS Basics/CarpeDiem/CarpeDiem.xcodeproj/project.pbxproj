@@ -16,6 +16,7 @@
 		BF89B84C1F68F56A00DCFFC5 /* CarpeDiemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89B84B1F68F56A00DCFFC5 /* CarpeDiemUITests.swift */; };
 		BF89B85C1F69034400DCFFC5 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89B85B1F69034400DCFFC5 /* AddItemTableViewController.swift */; };
 		BF89B8601F6913EE00DCFFC5 /* AddItemTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89B85F1F6913EE00DCFFC5 /* AddItemTableViewControllerDelegate.swift */; };
+		BF89B8A11F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF89B89F1F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BF89B84D1F68F56A00DCFFC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF89B85B1F69034400DCFFC5 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
 		BF89B85F1F6913EE00DCFFC5 /* AddItemTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewControllerDelegate.swift; sourceTree = "<group>"; };
+		BF89B8A01F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarpeDiem.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				BF89B85B1F69034400DCFFC5 /* AddItemTableViewController.swift */,
 				BF89B82B1F68F56A00DCFFC5 /* AppDelegate.swift */,
+				BF89B89F1F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodeld */,
 				BF89B82D1F68F56A00DCFFC5 /* CarpeDiemViewController.swift */,
 				BF89B82F1F68F56A00DCFFC5 /* Main.storyboard */,
 				BF89B85F1F6913EE00DCFFC5 /* AddItemTableViewControllerDelegate.swift */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF89B8A11F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodeld in Sources */,
 				BF89B82E1F68F56A00DCFFC5 /* CarpeDiemViewController.swift in Sources */,
 				BF89B82C1F68F56A00DCFFC5 /* AppDelegate.swift in Sources */,
 				BF89B8601F6913EE00DCFFC5 /* AddItemTableViewControllerDelegate.swift in Sources */,
@@ -568,6 +572,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF89B89F1F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF89B8A01F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodel */,
+			);
+			currentVersion = BF89B8A01F6A3C7400DCFFC5 /* CarpeDiem.xcdatamodel */;
+			path = CarpeDiem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BF89B8201F68F56A00DCFFC5 /* Project object */;
 }
