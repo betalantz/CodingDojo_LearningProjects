@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s9A-xB-cKk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Cells View Controller-->
+        <scene sceneID="uwc-1N-eM8">
+            <objects>
+                <tableViewController id="s9A-xB-cKk" customClass="CustomCellsViewController" customModule="CustomCell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="P2J-7T-TaD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="88" id="fg7-5Z-tHD" customClass="CustomCell" customModule="CustomCell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fg7-5Z-tHD" id="ECX-0A-nJ5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiY-Z1-jgC">
+                                            <rect key="frame" x="325" y="19.5" width="42" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zov-3O-wxk">
+                                            <rect key="frame" x="8" y="19.5" width="46" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="abT-Vu-8VJ"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GiY-Z1-jgC" firstAttribute="height" secondItem="zov-3O-wxk" secondAttribute="height" id="5VU-sl-d0A"/>
+                                        <constraint firstAttribute="trailing" secondItem="GiY-Z1-jgC" secondAttribute="trailing" constant="8" id="UmM-8R-On5"/>
+                                        <constraint firstItem="zov-3O-wxk" firstAttribute="centerY" secondItem="GiY-Z1-jgC" secondAttribute="centerY" id="XDm-5y-tQ4"/>
+                                        <constraint firstItem="zov-3O-wxk" firstAttribute="leading" secondItem="ECX-0A-nJ5" secondAttribute="leading" constant="8" id="cd4-tf-MaY"/>
+                                        <constraint firstItem="GiY-Z1-jgC" firstAttribute="centerY" secondItem="ECX-0A-nJ5" secondAttribute="centerY" id="rfy-im-ZLv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="leftButton" destination="zov-3O-wxk" id="38e-qz-BOl"/>
+                                    <outlet property="rightLabel" destination="GiY-Z1-jgC" id="x1o-vC-T6e"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s9A-xB-cKk" id="igT-3U-3k1"/>
+                            <outlet property="delegate" destination="s9A-xB-cKk" id="poI-RM-fOg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3j2-AE-Tjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.80000000000001" y="109.29535232383809"/>
+        </scene>
+    </scenes>
+</document>
