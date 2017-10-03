@@ -6,6 +6,8 @@ let sandwich = {
     veggies: 'Caramelized Onions'
 }
 // the variable 'topping' is used instead of an index
+console.log(sandwich)
+
 for(let topping in sandwich){
     // when we log 'topping', we notice it's a key
     console.log(topping);
