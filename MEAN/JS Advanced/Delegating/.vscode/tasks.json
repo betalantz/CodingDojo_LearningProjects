@@ -1,0 +1,25 @@
+{
+    "isShellCommand": true,
+    "suppressTaskName": true,
+    "osx": {
+      "command": "/usr/local/bin/node"
+    },
+    "linux": {
+      "command": "/usr/bin/node"
+    },
+    "windows": {
+      "command": "C:\\Program Files\\nodejs\\node.exe"
+    },
+    "tasks": [
+        {
+            "taskName": "node",
+            "args": [
+                "${file}"
+            ],
+            "isBuildCommand": true,
+            "problemMatcher": [
+                "$jshint-stylish"
+            ]
+        }
+    ]
+}
