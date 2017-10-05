@@ -16,9 +16,14 @@ app.get('/', function(req, res) {
 
 app.post('/result', function(req, res) {
     console.log("POST DATA", req.body);
-
-    // res.render('results')
-    res.redirect('/')
+    let result = {
+        name: req.body.name,
+        location: req.body.location,
+        language: req.body.language,
+        comment: req.body.comment
+    }
+    res.render('results', {result: result})
+    // res.redirect('/')
 })
 
 app.listen(PORT, function() {
