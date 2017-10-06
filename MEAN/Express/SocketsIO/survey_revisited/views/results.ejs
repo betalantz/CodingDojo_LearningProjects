@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+    <div class="card">
+        <h4 class="card-header">Submitted Information</h4>
+        <div class="card-body">
+          <h4 class="card-title">Name: <%= result.name %></h4>
+          <p class="card-text">Location: <%= result.location %></p>
+          <p class="card-text">Favorite language: <%= result.language %></p>
+          <p class="card-text">Comment: <%= result.comments %></p>
+          <a href="/" class="btn btn-primary">Go back</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
