@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sockets</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="jquery/dist/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            $(document).ready( () => {
+                console.log("jQuery!");
+
+                const socket = io.connect()
+
+                console.log(socket);
+
+                $("button").click(() => {
+                    socket.emit("click counter")
+                })
+
+                socket.on("counter", number_of_clicks => {
+                    $("#click_counter").text(number_of_clicks)
+                })
+            })
+        </script>
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h2>Sockets?</h2>
+        <div id="click_counter"></div>
+        <button>Click me</button>
+    </body>
+</html>
