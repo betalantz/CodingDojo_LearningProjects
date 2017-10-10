@@ -4,20 +4,23 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>QuotingDojo</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
+      <h2>Behold the quotes!</h2>
+      <% for (quote of quotes) { %>
         <div class="card">
             <h4 class="card-header">Quote</h4>
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">Someone famous at </footer>
+                    <p>"<%= quote.quote %>"</p>
+                    <footer class="blockquote-footer"><%= quote.name %> at <%= quote.date %></footer>
         </div>
+        <% } %>
         <a href="/" class="btn btn-primary">Go back</a>
     </div>
   </body>

@@ -19,24 +19,27 @@ app.set('views', path.join(__dirname, './client/views'));
 // Setting our View Engine set to EJS
 app.set('view engine', 'ejs');
 // Routes
-// The root route -- we want to get all of the users from the database and then render the index view passing it all of the users
+// The root route-render the add quote page
 app.get('/', function(req, res) {
+    res.render('index')
+})
+// Skip to show -- we want to get all of the quotes from the database and then render the show view passing it all of the quotes
+app.get('/quotes', function(req, res) {
     Quote.find({}, function(err, quotes) {
-      // This is the method that finds all of the users from the database
+      // This is the method that finds all of the quotes from the database
       // Notice how the first parameter is the options for what to find and the second is the
-      //   callback function that has an error (if any) and all of the users
-      // Keep in mind that everything you want to do AFTER you get the users from the database must
+      //   callback function that has an error (if any) and all of the quotes
+      // Keep in mind that everything you want to do AFTER you get the quotes from the database must
       //   happen inside of this callback for it to be synchronous 
       // Make sure you handle the case when there is an error, as well as the case when there is no error
       if(err){
           console.log("You done messed up, son!");
       } else {
-          console.log("Sending users to index.ejs")
-          res.render('index', {quotes})
+          console.log("Sending users to show.ejs")
+          res.render('show', {quotes})
       }
     })
   })
-  
 // Add Quote Request 
 app.post('/quotes', function(req, res) {
     console.log("POST DATA", req.body);
@@ -49,7 +52,7 @@ app.post('/quotes', function(req, res) {
         console.log('something went wrong');
       } else { // else console.log that we did well and then redirect to the root route
         console.log('successfully added a user!');
-        res.redirect('/');
+        res.redirect('/quotes');
       }
     })
   })
