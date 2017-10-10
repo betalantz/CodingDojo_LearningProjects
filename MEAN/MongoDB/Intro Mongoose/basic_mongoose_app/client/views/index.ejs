@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-    <h1>Survey Form</h1>
+    <h1>User Entry</h1>
     <form action='/users' method='post'>
         <div class="form-group">
           <label for="nameInput1">Your name</label>
@@ -24,6 +24,10 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <ul class="list-group">
+        <% for (user of users) { %>
+        <li class="list-group-item list-group-item-primary">Name: <%= user.name %> Age: <%= user.age %> </li>
+        <% } %>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
