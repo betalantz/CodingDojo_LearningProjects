@@ -31,20 +31,20 @@ app.get('/', function(req, res) {
         }
     })
 })
-// // Display info on one crow
-// app.get('/crows/:id', function(req, res) {
-//     Crow.find({_id: req.params.id}, function(err, crow) {
-//       if(err){
-//           console.log("Can't show just one");
-//       } else {
-//           console.log("Sending users to show.ejs")
-//           res.render('show_one', {crow})
-//       }
-//     })
-// })
 // Display form for adding a crow
 app.get('/crows/new', function(req, res) {
     res.render('new')
+})
+// Display info on one crow
+app.get('/crows/:id', function(req, res) {
+    Crow.findOne({_id: req.params.id}, function(err, crow) {
+      if(err){
+          console.log("Can't show just one");
+      } else {
+          console.log("Sending crow to show_one.ejs")
+          res.render('show_one', {crow})
+      }
+    })
 })
 // Add crow Request 
 app.post('/crows', function(req, res) {
@@ -64,18 +64,18 @@ app.post('/crows', function(req, res) {
   })
 // Show form to edit a crow
 app.get('/crows/edit/:id', function(req, res) {
-    Crow.find({_id: req.params.id}, function(err, crow) {
+    Crow.findOne({_id: req.params.id}, function(err, crow) {
         if(err){
             console.log("You done messed up edit, son!");
         } else {
-            console.log("Sending users to edit.ejs")
+            console.log("Sending crow to edit.ejs")
             res.render('edit', {crow})
         }
     })
 })
 // Update from the edit form
 app.post('/crows/:id', function(req, res) {
-    Crow.find({_id: req.params.id}, function(err, crow) {
+    Crow.findOne({_id: req.params.id}, function(err, crow) {
         crow.name = req.body.name
         crow.age = req.body.age
         crow.tree = req.body.tree
