@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Murder of Crows</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-2">A Murder of Crows</h1>
+      <table class="table table-striped table-inverse">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Tree</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+        <% for (crow of crows) { %>
+            <tr>
+                <td scope="row"><%= crow.name %></td>
+                <td><%= crow.age %></td>
+                <td><%= crow.tree %></td>
+                <td><a class="btn btn-secondary btn-sm" href="/crows/edit/<%= crow._id %>" role="button">Edit</a>
+                    <a class="btn btn-secondary btn-sm" href="/crows/<%= crow._id %>" role="button">Show</a>
+                    <form action="/crows/destroy/<%= crow._id %>" method=post><button type="submit" class="btn btn-secondary btn-sm">Delete</button></form>
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+      </table>
+        <a href="/crows/new" class="btn btn-secondary btn-lg">Add a crow</a>
+    </div>
+  </body>
+</html>
