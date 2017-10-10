@@ -13,7 +13,7 @@ const mongoose = require('mongoose')
 
 const PORT = 8000
 // Setting our Static Folder Directory
-app.use(express.static(path.join(__dirname, './static')));
+app.use(express.static(path.join(__dirname, './client/static')));
 // Setting our Views Folder Directory
 app.set('views', path.join(__dirname, './client/views'));
 // Setting our View Engine set to EJS
