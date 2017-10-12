@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  color = 'red';
   title = 'No Demons Here';
+  switch: boolean = true;
 }
