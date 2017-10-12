@@ -20,15 +20,17 @@ export class CarsComponent implements OnInit {
       {
       make: "Ford",
       model: "Fiesta",
-      year: 2005
+      year: 2005,
+      numbers: [1,2,3]
       },
       {
-        make: "Dodge",
-        model: "Dart",
-        year: 1968
+      make: "Dodge",
+      model: "Dart",
+      year: 1968,
+      numbers: [5,6,7,8]
       }
     ]
-    this.new_car = new Car
+    // this.new_car = new Car
   }
   create_car(new_car: Car) {
     console.log('something happened');
