@@ -3,6 +3,13 @@
 </p>
 <h1>Hello, {{ first_name }}!</h1>
 
-<ul>
+<!-- <p>{{ new_car | json }}</p> -->
+<app-cars-create (add_a_car)='create_car($event)'></app-cars-create>
+
+<app-cars-detail *ngFor="let car of cars" [this_car]='car'></app-cars-detail>
+<!-- <ul>
   <li *ngFor="let car of cars">{{car.year}} {{car.make}} {{car.model}} </li>
-</ul>
+  <ul>
+      <li *ngFor="let num of car.numbers">{{num}} </li>
+    </ul>
+</ul> -->

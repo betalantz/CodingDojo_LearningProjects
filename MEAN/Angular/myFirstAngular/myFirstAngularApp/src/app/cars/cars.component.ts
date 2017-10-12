@@ -10,6 +10,7 @@ import { Car } from "./car"
 export class CarsComponent implements OnInit {
   first_name: string
   cars: Array<Car>
+  new_car: Car
 
   constructor() { }
 
@@ -27,6 +28,11 @@ export class CarsComponent implements OnInit {
         year: 1968
       }
     ]
+    this.new_car = new Car
   }
-
+  create_car(new_car: Car) {
+    console.log('something happened');
+    this.cars.push(new_car)
+    // this.new_car = new Car
+  }
 }
