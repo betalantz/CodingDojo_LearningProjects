@@ -1,0 +1,13 @@
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+</div>
+<div class='btn'>
+  <button (click)='clickPST()'[ngClass]="{ 'on': switch == 'PST' }">PST</button>
+  <button (click)='clickMST()'[ngClass]="{ 'on': switch == 'MST' }">MST</button>
+  <button (click)='clickCST()'[ngClass]="{ 'on': switch == 'CST' }">CST</button>
+  <button (click)='clickEST()'[ngClass]="{ 'on': switch == 'EST' }">EST</button>
+  <button (click)='clickClear()'>Clear</button>
+</div>
+<h3>{{ time | date: 'medium' }}</h3>
