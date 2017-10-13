@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+  <div *ngFor='let switch of switches; let idx = index' style="display: inline-block">
+    <button (click)='toggle(idx)' *ngIf=switch [ngClass]="{ 'on': switch == true }">ON</button>
+    <button (click)='toggle(idx)' *ngIf=!switch [ngClass]="{ 'off': switch != true }">OFF</button>
+  </div>
+</div>
+  
