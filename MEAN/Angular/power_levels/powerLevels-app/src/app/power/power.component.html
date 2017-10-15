@@ -3,16 +3,17 @@
     <div class="col">
       <div class="jumbotron">
         <h1 class="display-4">Saiyan Power Levels</h1>
-        <form>
+        <form (submit)="onSubmit()">
             <div class="form-row">
               <div class="col-5">
                 <label for="powerLevel">Initial Power Level</label>
-                <input type="number" class="form-control" id="powerLevel" name=" powerLevel" min="1" max="100">
+                <input type="number" class="form-control" id="level" name="level" [(ngModel)]="power.level" min="1" max="100">
                 <button type="submit" class="btn btn-primary">Calculate Powers</button>
             </div>
             <div class="col">
               <img width="300" src="/assets/img/saiyan_img.jpg">
             </div>
+            {{ power.level }}
           </div>
         </form>
       </div>

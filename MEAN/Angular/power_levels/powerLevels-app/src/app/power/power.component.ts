@@ -6,11 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./power.component.css']
 })
 export class PowerComponent implements OnInit {
-  currPower: number
+  power = { level: 0}
 
   constructor() { }
 
   ngOnInit() {
+  }
+  onSubmit() {
+    console.log(this.power.level);
+    this.power = { level: 0}
   }
 
 }
