@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PowerComponent implements OnInit {
   power = { level: 0}
+  currPower: number
 
   constructor() { }
 
   ngOnInit() {
   }
   onSubmit() {
-    console.log(this.power.level);
+    this.currPower = this.power.level
+    console.log(this.currPower);
     this.power = { level: 0}
   }
 

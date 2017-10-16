@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-saiyan',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./saiyan.component.css']
 })
 export class SaiyanComponent implements OnInit {
-
+  @Input() pLevel
   constructor() { }
 
   ngOnInit() {

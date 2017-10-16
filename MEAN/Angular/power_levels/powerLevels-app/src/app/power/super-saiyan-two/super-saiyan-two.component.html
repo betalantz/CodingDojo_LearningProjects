@@ -1,3 +1,8 @@
-<p>
-  super-saiyan-two works!
-</p>
+<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+    <div class="card-header">Power Level:</div>
+    <div class="card-body" *ngIf="pLevel">
+      <h4 class="card-title" >{{ pLevel * 150 }}</h4>
+    <p class="card-text" *ngIf="pLevel * 150 > 9000">"Over 9000!"</p>
+    </div>
+</div>
+  

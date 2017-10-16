@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-human',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./human.component.css']
 })
 export class HumanComponent implements OnInit {
-
+  @Input() pLevel
   constructor() { }
 
   ngOnInit() {

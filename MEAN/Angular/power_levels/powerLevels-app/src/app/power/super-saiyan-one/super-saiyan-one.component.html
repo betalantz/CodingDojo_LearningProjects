@@ -1,3 +1,7 @@
-<p>
-  super-saiyan-one works!
-</p>
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Power Level:</div>
+    <div class="card-body" *ngIf="pLevel">
+      <h4 class="card-title">{{ pLevel * 90 }}</h4>
+    </div>
+</div>
+  

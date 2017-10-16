@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <div class="jumbotron">
-        <h1 class="display-4">Saiyan Power Levels</h1>
+        <h1 class="display-4 text-center">Saiyan Power Levels</h1>
         <form (submit)="onSubmit()">
             <div class="form-row">
               <div class="col-5">
@@ -13,29 +13,28 @@
             <div class="col">
               <img width="300" src="/assets/img/saiyan_img.jpg">
             </div>
-            {{ power.level }}
           </div>
         </form>
       </div>
     </div>
   <div class="row">
     <div class="col">
-          <app-human></app-human>
+      <app-human [pLevel]='currPower'></app-human>
     </div>
     <div class="col">
-      <app-saiyan></app-saiyan>
+      <app-saiyan [pLevel]='currPower'></app-saiyan>
     </div>
     <div class="col">
-      <app-super-saiyan-one></app-super-saiyan-one>
+      <app-super-saiyan-one [pLevel]='currPower'></app-super-saiyan-one>
     </div>
   <div class="row">
     <div class="col">
-          <app-super-saiyan-two></app-super-saiyan-two>
+          <app-super-saiyan-two [pLevel]='currPower'></app-super-saiyan-two>
     </div>
     <div class="col">
-      <app-super-saiyan-three></app-super-saiyan-three>
+      <app-super-saiyan-three [pLevel]='currPower'></app-super-saiyan-three>
     </div>
     <div class="col">
-      <app-super-saiyan-four></app-super-saiyan-four>
+      <app-super-saiyan-four [pLevel]='currPower'></app-super-saiyan-four>
     </div>
 </div>
