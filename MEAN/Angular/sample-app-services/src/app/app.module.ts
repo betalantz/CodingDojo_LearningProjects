@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskNewComponent } from './task-new/task-new.component';
+import { TaskService } from './task.service'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { TaskNewComponent } from './task-new/task-new.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
