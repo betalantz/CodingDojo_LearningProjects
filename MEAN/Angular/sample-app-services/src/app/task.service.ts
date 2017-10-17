@@ -11,7 +11,7 @@ export class TaskService {
   retrieveTasks(callback){
     this._http.get('https://59e54039f99ad90012268266.mockapi.io/tasks').subscribe( 
       (response) => { 
-        this.tasks  =response.json();
+        this.tasks = response.json();
         callback(this.tasks);
       }, // <— first method
       (error) => { console.log("error in http.get", error); } // <— second method
