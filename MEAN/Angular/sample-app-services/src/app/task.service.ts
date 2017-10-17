@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http'
 
 @Injectable()
 export class TaskService {
  
-  tasks = ['drink coffee or tea', 'build a web app'];
+  tasks = [];
  
-  constructor() { }
+  constructor(private _http: Http) { }
  
-  retrieveTasks(){
-    return this.tasks;
+  retrieveTasks(callback){
+    this._http.get('https://59e54039f99ad90012268266.mockapi.io/tasks').subscribe( 
+      (response) => { 
+        this.tasks  =response.json();
+        callback(this.tasks);
+      }, // <— first method
+      (error) => { console.log("error in http.get", error); } // <— second method
+    );
   }
  
   createTask(task){
