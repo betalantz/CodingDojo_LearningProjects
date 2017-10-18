@@ -23,10 +23,10 @@ Terminal
 - ng generate clasS mainComponent/name ( singular ) -- name.ts 
 - ng g c subComponent  mainComponent/subComponent
 Connecting frontend to backend
+=> open new terminal and run sudo mongod 
+=> open new terminal and run mongo //optional
 => CD to Angular folder "client"
 => ng serve run on localhost:4200 //test to see all app pages are working
 => control c out of ng serve. 
 => run ng build -w  which will create dist folder. this will remain open while working on the app
 => open new terminal and run  nodemon server.js -Keep this terminal open all times while working on the project
-=> open new terminal and run sudo mongod 
-=> open new terminal and run mongo 
