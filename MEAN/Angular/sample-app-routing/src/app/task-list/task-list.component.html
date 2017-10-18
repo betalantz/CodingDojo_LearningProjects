@@ -1,3 +1,7 @@
-<ul>
-  <li *ngFor="let task of tasks">{{ task.task }}</li>
-</ul>
+<section>
+  <ul>
+    <li [routerLink]="['tasks', task._id]" *ngFor='let task of tasks'>
+      {{ task.title }}
+    </li>
+  </ul>
+</section>

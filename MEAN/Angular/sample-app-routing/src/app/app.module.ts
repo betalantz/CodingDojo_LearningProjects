@@ -4,18 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskNewComponent } from './task-new/task-new.component';
+import { TaskDetailsComponent } from './task-details/task-details.component'
 import { TaskService } from './task.service'
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
-    TaskNewComponent
+    TaskNewComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]

@@ -1,21 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
+import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
+
+import 'rxjs/add/operator/map';
+
+import { Task } from './task';
+import { TASKS } from './mock-tasks';
 
 @Injectable()
 export class TaskService {
- 
-  tasks = [];
- 
+
+  tasks: Task[] = TASKS;
+
   constructor(private _http: Http) { }
- 
-  retrieveTasks(callback){
-    this._http.get('https://59e54039f99ad90012268266.mockapi.io/tasks').subscribe( 
-      (response) => { 
-        this.tasks = response.json();
-        callback(this.tasks);
-      }, // <— first method
-      (error) => { console.log("error in http.get", error); } // <— second method
-    );
+
+  retrieveTasks(): Observable<Task[]> {
+    return new Observable(subscriber => subscriber.next(this.tasks));
+  }
+
+  retrieveTask(id: string): Observable<Task> {
+    return new Observable(subscriber => {
+      const foundTask = this.tasks.find(task => task._id === parseInt(id, 10));
+      if (foundTask) {
+        return subscriber.next(foundTask);
+      }
+      subscriber.error(new Error(`Unable to find task with id ${ id }`));
+    });
   }
  
   createTask(task){

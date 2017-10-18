@@ -1,0 +1,5 @@
+<div *ngIf='task' >
+  <p>Task: {{ task.title }}</p>
+  <p>Completed: {{ task.completed }}</p>
+  <button (click)='goBack()'>Back</button>
+</div>
