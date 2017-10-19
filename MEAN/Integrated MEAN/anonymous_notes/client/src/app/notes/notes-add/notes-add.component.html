@@ -1,0 +1,25 @@
+<form (submit)="create_note(new_note_form);new_note_form.reset()" #new_note_form='ngForm'>
+  <div class='form-group'>
+    <label for="newNote">Note:</label>
+    <textarea
+    required
+    minlength='3'
+    name='noteText'
+    class="form-control"
+    rows='4'
+    [(ngModel)]='new_note.noteText'
+    #noteText='ngModel'
+    placeholder="Enter your note of note..."></textarea>
+  </div>
+  <div class='alert alert-danger'
+    *ngIf='noteText.touched && !noteText.valid'>
+    <div *ngIf='noteText.errors?.required'>
+      A note is required.
+    </div>
+    <div *ngIf="noteText.errors?.minlength">
+      note should be minimum {{noteText.errors.minlength.requiredLength}} characters.
+    </div>
+  </div>
+  
+  <input [disabled]='!new_note_form.valid' class="btn btn-primary" type="submit" value='Add note'>
+</form>
