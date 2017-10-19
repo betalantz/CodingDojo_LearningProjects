@@ -23,3 +23,14 @@
   
   <input [disabled]='!new_note_form.valid' class="btn btn-primary" type="submit" value='Add note'>
 </form>
+<br>
+<div class="card border-primary mb-3" *ngFor='let note of notes'>
+    
+  <div class="card-body text-primary">
+    
+          <blockquote class="blockquote mb-0">
+            <p>{{ note.note }}</p>
+            <footer class="blockquote-footer">Noted on: {{ note.createdAt | date:"medium"}}</footer>
+          </blockquote>
+    </div>
+  </div>
