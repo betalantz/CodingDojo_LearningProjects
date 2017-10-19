@@ -3,7 +3,7 @@ const fs = require("fs")
 const path = require("path")
 
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://localhost/users201710", {useMongoClient: true})
+mongoose.connect("mongodb://localhost/notes201710", {useMongoClient: true})
 
 const models_path = path.join(__dirname, "./../models")
 

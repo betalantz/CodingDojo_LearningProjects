@@ -1,13 +1,13 @@
-<form (submit)="create_note(new_note_form);new_note_form.reset()" #new_note_form='ngForm'>
+<form (submit)="create_note(new_note_form); new_note_form.reset()" #new_note_form='ngForm'>
   <div class='form-group'>
     <label for="newNote">Note:</label>
     <textarea
     required
     minlength='3'
-    name='noteText'
+    name='note'
     class="form-control"
     rows='4'
-    [(ngModel)]='new_note.noteText'
+    [(ngModel)]='new_note.note'
     #noteText='ngModel'
     placeholder="Enter your note of note..."></textarea>
   </div>

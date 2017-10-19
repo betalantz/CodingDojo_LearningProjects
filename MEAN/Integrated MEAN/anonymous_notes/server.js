@@ -21,5 +21,5 @@ require("./server/config/mongoose.js")
 require("./server/config/routes.js")(app)
 
 app.listen(PORT, () => {
-     console.log(`Listening on port 800`)
+     console.log(`Listening on port 8000`)
 })
