@@ -98,3 +98,14 @@ function sumToOne(num){
 }
 console.log(sumToOne(928))
 console.log(sumToOne(1138))
+
+function clockHandAngles(seconds){
+    let secDg = (seconds % 60)*6
+    let minDg = (seconds % 3600)/10
+    let hrDg = ((Math.floor((seconds % 43200)/3600))*30)+((seconds % 3600)*0.00833)
+    console.log("Hour hand: " + hrDg + " degrees");
+    console.log("Minute hand: " + minDg + " degrees");
+    console.log("Second hand: " + secDg + " degrees");
+}
+clockHandAngles(3600)
+clockHandAngles(119730)
