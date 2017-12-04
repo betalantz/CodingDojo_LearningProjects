@@ -131,3 +131,24 @@ isPrime(3)
 isPrime(6)
 isPrime(89)
 isPrime(102)
+
+// The following are more elegant solutions to isPrime
+
+function isPrime2(num) {
+    for(var i = 2; i < num; i++){
+        if(num % i === 0) {return false;}
+    }
+    return num !== 1;
+}
+// with ES6
+const isPrime = num => {
+    for(let i = 2; i < num; i++)
+      if(num % i === 0) return false;
+    return num !== 1;
+}
+// checking only to square root
+const isPrime2 = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if(num % i === 0) return false; 
+    return num !== 1;
+}  
