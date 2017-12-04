@@ -109,3 +109,25 @@ function clockHandAngles(seconds){
 }
 clockHandAngles(3600)
 clockHandAngles(119730)
+
+function isPrime(num) {
+    if (num < 2) {
+        console.log(num + " is not prime");
+        return false
+    }
+    let i = num - 1
+    while (i > 1) {
+        if (num % i == 0) {
+            console.log(num + " is not prime");
+            return false
+        }
+        i--
+    }
+    console.log(num + " is prime");
+}
+isPrime(1)
+isPrime(2)
+isPrime(3)
+isPrime(6)
+isPrime(89)
+isPrime(102)
