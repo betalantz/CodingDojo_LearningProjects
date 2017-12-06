@@ -42,7 +42,8 @@ console.log(extractDigit(65.43,-1));
 console.log(extractDigit(-65.43,-2));
 
 function mostSignificantDigit (num) {
-    var rem;
+    let rem;
+    num = Math.abs(num)
     if (num < 1) {
         while (num < 10) {
             rem = num % 10
@@ -57,8 +58,8 @@ function mostSignificantDigit (num) {
   return Math.trunc(rem);
 }
 
-console.log('254 : ', mostSignificantDigit(254));
+console.log('-254 : ', mostSignificantDigit(-254));
 console.log('9543 : ', mostSignificantDigit(9543));
-console.log('4 : ', mostSignificantDigit(4));
+console.log('-4 : ', mostSignificantDigit(-4));
 console.log('67.89 : ', mostSignificantDigit(67.89));
 console.log('0.089 : ', mostSignificantDigit(0.089));
