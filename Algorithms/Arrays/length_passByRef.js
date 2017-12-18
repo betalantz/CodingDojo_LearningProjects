@@ -19,5 +19,18 @@ console.log(minToFront(arr1));
 console.log(minToFront(arr2));
 
 function reverseArr(arr){
-    
+    let temp
+    //set the number of iterations to half the array length, using Math.trund to handle odd numbered arr lengths
+    let iter = Math.trunc(arr.length/2)
+    //iterate through the array swaping the first and last values and then incrementing a counter which moves the swap progressively inward toward the center value (arrays of odd length leave the mid-value alone)
+    for(let count = 0; count<iter; count++){
+        temp=arr[count]
+        arr[count]=arr[arr.length-1-count]
+        arr[arr.length-1-count]=temp
+    }
+    return arr
 }
+let arr3 = [1,3,5,7,9]
+let arr4 = [2,4,6,8,10,12]
+console.log(reverseArr(arr3));
+console.log(reverseArr(arr4));
