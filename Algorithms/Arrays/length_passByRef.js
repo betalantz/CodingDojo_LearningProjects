@@ -34,3 +34,33 @@ let arr3 = [1,3,5,7,9]
 let arr4 = [2,4,6,8,10,12]
 console.log(reverseArr(arr3));
 console.log(reverseArr(arr4));
+
+function rotateArr(arr, shiftBy){
+    let memo
+    for (let g=1; g<=shiftBy; g++){
+        memo=arr[arr.length-1]
+        for (let f=arr.length-1; f>0; f--){
+            arr[f]=arr[f-1]
+        }
+        arr[0]=memo
+    }
+    return arr
+}
+let arr5=[6,7,8,9,10]
+console.log(rotateArr(arr5,2));
+
+function rotateArr2(arr, shift){
+    shift = shift % arr.length
+    let val
+    let index = 0
+    let temp = arr[0]
+    for (let i=1; i<=arr.length; i++){
+        val=arr[(index+shift)%arr.length]
+        arr[(index+shift)%arr.length]=temp
+        temp = val
+        index=(index+shift)%arr.length
+    }
+    return arr
+}
+let arr6=[1,2,3,4,5,6,7]
+console.log(rotateArr2(arr6,9));
