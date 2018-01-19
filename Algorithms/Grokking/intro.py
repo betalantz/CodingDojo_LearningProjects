@@ -17,3 +17,22 @@ my_list = [1,3,5,7,9]
 
 print binary_search(my_list, 3)
 print binary_search(my_list, -1)
+
+def findSmallest(arr):
+    smallest = arr[0]
+    smallest_idx = 0
+    for i in range(1, len(arr)):
+        if arr[i]<smallest:
+            smallest = arr[i]
+            smallest_idx = i
+    return smallest_idx
+
+def selectionSort(arr):
+    newArr = []
+    for i in range(len(arr)):
+        smallest = findSmallest(arr)
+        newArr.append(arr.pop(smallest))
+    return newArr
+
+my_arr = [-1,5,3,6,2,10]
+print selectionSort(my_arr)
