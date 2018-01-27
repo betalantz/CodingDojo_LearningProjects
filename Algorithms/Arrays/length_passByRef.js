@@ -20,10 +20,10 @@ console.log(minToFront(arr2));
 
 function reverseArr(arr){
     let temp
-    //set the number of iterations to half the array length, using Math.trund to handle odd numbered arr lengths
-    let iter = Math.trunc(arr.length/2)
+    //set the number of iterations to half the array length, using Math.trunc to handle odd numbered arr lengths
+    let mid = Math.trunc(arr.length/2)
     //iterate through the array swaping the first and last values and then incrementing a counter which moves the swap progressively inward toward the center value (arrays of odd length leave the mid-value alone)
-    for(let count = 0; count<iter; count++){
+    for(let count = 0; count<mid; count++){
         temp=arr[count]
         arr[count]=arr[arr.length-1-count]
         arr[arr.length-1-count]=temp
@@ -64,3 +64,46 @@ function rotateArr2(arr, shift){
 }
 let arr6=[1,2,3,4,5,6,7]
 console.log(rotateArr2(arr6,9));
+
+function filterRange(arr, min, max){
+    for (let n=0; n<arr.length; n++){
+        if (arr[n]<min || arr[n]>max){
+            for (let i=n; i<arr.length; i++){
+                if (i==arr.length-1){
+                    arr.pop()
+                } else {
+                    arr[i]=arr[i+1]
+                }
+            }
+        }
+    }
+    return arr
+}
+let arr7=[10,3,7,2,1,9]
+console.log(filterRange(arr7,3,7));
+
+function arrConcat(a1, a2){
+    let res=[]
+    for (let j=0; j<a1.length; j++){
+        res.push(a1[j])
+    }
+    for (let k=0; k<a2.length; k++){
+        res.push(a2[k])
+    }
+    return res
+}
+let arr8=['r','u','a','d','d']
+console.log(arrConcat(arr1,arr8));
+
+function skyline(arr){
+    let max=0
+    let res=[]
+    for (let x=0; x<arr.length; x++){
+        if (arr[x]>max){
+            max=arr[x]
+            res.push(arr[x])
+        }
+    }
+    return res
+}
+console.log(skyline([-1,1,1,7,3]));
