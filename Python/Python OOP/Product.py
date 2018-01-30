@@ -36,8 +36,9 @@ class Product(object):
         print "********************"
         return self
 
-product1 = Product(23, "gadgetA", 3, "brandA", 19)
-product2 = Product(100, "gadgetB", 5, "brandB", 80)
+if __name__=="__main__":
+    product1 = Product(23, "gadgetA", 3, "brandA", 19)
+    product2 = Product(100, "gadgetB", 5, "brandB", 80)
 
-product1.sell().addTax(.10).displayInfo()
-product2.addTax(.08).sell().returnItem("opened").displayInfo()
+    product1.sell().addTax(.10).displayInfo()
+    product2.addTax(.08).sell().returnItem("opened").displayInfo()
