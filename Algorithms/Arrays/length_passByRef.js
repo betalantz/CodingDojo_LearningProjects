@@ -107,3 +107,4 @@ function skyline(arr){
     return res
 }
 console.log(skyline([-1,1,1,7,3]));
+// implement these function with built-ins, such as map(), filter(), reduce(), slice()
