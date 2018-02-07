@@ -87,3 +87,4 @@ def binary_search(value, items, low=0, high=None):
 
 for val in range(7):
     print val, binary_search(val, [1, 2, 3, 5])
+

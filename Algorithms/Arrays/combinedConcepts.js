@@ -26,7 +26,7 @@ function arrNthToLast(arr, n){
 let arr2 = [5,2,3,6,4,9,7]
 console.log(arrNthToLast(arr2,3));
 
-// how to implement below without sorting
+// how to implement below without sorting?
 function arrNthHighest(arr, n){
     if (n>arr.length){
         return null
@@ -37,7 +37,9 @@ function arrNthHighest(arr, n){
 let arr3 = [42,1,4,Math.PI,7]
 console.log(arrNthHighest(arr3,2));
 console.log(arrNthHighest(arr3,6));
-
+console.log(arr3);
+arr3.sort(function(a,b){return a-b})
+console.log(arr3);
 // function isCreditCardValid(digitArr){
 
 // }
