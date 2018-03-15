@@ -1,6 +1,16 @@
 function Node(val) {
     this.val = val;
     this.next = null;
+    this.removeSelf = function(){
+        if (this.next){
+            let temp = this.next
+            this.val = temp.val
+            this.next = temp.next
+            temp.next = null
+        } else {
+            this.val = null
+        }
+    }
 }
 
 class SingleLinkedList {
@@ -8,7 +18,6 @@ class SingleLinkedList {
         this.head = null;
         this.totalItems = 0;
     }
-
 
     addBack(val) {
         let node = new Node(val);
@@ -70,21 +79,42 @@ class SingleLinkedList {
         const listGTE = new SingleLinkedList()
         let current = this.head
         let tail = this.head
+        let pivot = this.head
         while (current) {
+            let copy = new Node(current.val)
             if (current.val < val) {
-                current.next = listLT.head
-                if (listLT.head = null){
-                    tail = current
+                if (!listLT.head){
+                    tail = copy
                 }
-                listLT.head = current
+                copy.next=listLT.head
+                listLT.head = copy
+            } else if (current.val === val) {
+                pivot = copy
             } else {
-                current.next = listGTE.head
-                listGTE.head = current
+                copy.next = listGTE.head
+                listGTE.head = copy
             }
             current = current.next
         }
-        tail.next = listGTE.head
+        tail.next = pivot
+        pivot.next = listGTE.head
         return listLT
+    }
+
+    deleteGivenNode(val) {
+        if (!this.head){
+            return null
+        }
+        let current = this.head
+        while (current) {
+            if (current.val===val) {
+                current.removeSelf()
+                this.totalItems--
+                return true
+            }
+            current = current.next
+        }
+        return false
     }
 }
 
@@ -107,3 +137,6 @@ SLL.addBack(12);
 SLL.display();
 const part1 = SLL.partition(3);
 part1.display();
+SLL.display()
+SLL.deleteGivenNode(12);
+SLL.display();

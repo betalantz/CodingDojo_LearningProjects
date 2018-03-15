@@ -88,8 +88,10 @@ SingleLinkedList.prototype.removeVal = function(val) {
             if (current.val===val){
                 if (current == this.head){
                     this.head = this.head.next;
+                    current.next = null;
                 } else {
                     prev.next = current.next;
+                    current.next = null;
                 }
                 this.totalItems--;
             } else {
