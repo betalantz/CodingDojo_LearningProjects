@@ -9,7 +9,7 @@ function Node(val) {
             temp.next = null
         } else {
             this.val = null
-        }
+        } 
     }
 }
 
