@@ -35,6 +35,43 @@ class BinarySearchTree {
         }
     }
 
+    contains(val) {
+        if(!this.root){
+            return console.log('No root node found');
+        }
+        let curr = this.root
+        while(curr){
+            if(val===curr.val){
+                return true
+            }
+            if(val<curr.val){
+                curr = curr.left
+            } else {
+                curr = curr.right
+            }
+        }
+        return false
+    }
+    min(node) {
+        if(!node){
+            node = this.root
+        }
+        while(node.left){
+            node = node.left
+        }
+        return node.val
+    }
+
+    max(node) {
+        if(!node){
+            node = this.root
+        }
+        while(node.right){
+            node = node.right
+        }
+        return node.val
+    }
+
     printByLevel() {
         if(!this.root) {
             return console.log('No root node found');
@@ -58,4 +95,22 @@ class BinarySearchTree {
         console.log(string.trim());
     }
 }
+
+const BST = new BinarySearchTree()
+BST.add(5)
+BST.add(3)
+BST.add(7)
+BST.add(2)
+BST.add(4)
+BST.add(4)
+BST.add(6)
+BST.add(8)
+BST.printByLevel()
+console.log(BST.contains(10));
+console.log(BST.contains(8));
+// const myBST = new BinarySearchTree()
+// console.log(myBST.contains(2));
+console.log(BST.min());
+console.log(BST.max());
+
 
