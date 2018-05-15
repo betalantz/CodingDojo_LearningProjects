@@ -2,23 +2,6 @@ function Node(value) {
     this.val = value
     this.left = null
     this.right = null
-    this.add = function(newNode){
-            if (newNode.val < this.val){
-                if(this.left){
-                    this.left.add(newNode)
-                } else {
-                    this.left = newNode
-                }
-                
-            } else if (newNode.val >= this.val){
-                if(this.right){
-                    this.right.add(newNode)
-                } else {
-                    this.right = newNode
-                }
-                
-            }
-        } 
 }
 
 class BinarySearchTree {
@@ -50,41 +33,6 @@ class BinarySearchTree {
                 }
             }
         }
-    }
-
-    rAdd(val){
-        let newNode = new Node(val)
-        if(this.root){
-            rFindAndAdd(this.root)
-            function rFindAndAdd(curr){
-                if (newNode.val < curr.val){
-                    if(curr.left){
-                        return rFindAndAdd(curr.left)
-                    } 
-                    curr.left = newNode
-                    
-                } else if (newNode.val >= curr.val){
-                    if(curr.right){
-                        return rFindAndAdd(curr.right)
-                    }
-                    curr.right = newNode
-                    
-                }
-            }
-
-        } else {
-            this.root = newNode
-        }
-    }
-
-    selfAdd(val){
-        let newNode = new Node(val)
-        if(this.root){
-            this.root.add(newNode)
-        } else {
-            this.root = newNode
-        }
-        return this
     }
 
     contains(val) {
@@ -146,26 +94,6 @@ class BinarySearchTree {
         }
         console.log(string.trim());
     }
-
-    size(node){
-        if(!node){
-            node = this.root;
-        }
-        let counter = 1;
-        rCount(node)
-        function rCount(node){
-            if(node.left){
-                counter += 1
-                rCount(node.left)
-            }
-            if(node.right){
-                counter += 1
-                rCount(node.right)
-            }
-            return counter
-        }
-        return counter
-    }
 }
 
 const BST = new BinarySearchTree()
@@ -177,7 +105,6 @@ BST.add(4)
 BST.add(4)
 BST.add(6)
 BST.add(8)
-BST.rAdd(11)
 BST.printByLevel()
 console.log(BST.contains(10));
 console.log(BST.contains(8));
@@ -185,6 +112,5 @@ console.log(BST.contains(8));
 // console.log(myBST.contains(2));
 console.log(BST.min());
 console.log(BST.max());
-console.log(BST.size());
 
 
