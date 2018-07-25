@@ -35,7 +35,7 @@ function getNewArr(arr){
         
     return arr.map(function(item,index){
         item.full_name = [item.first_name,item.last_name].join(" ");
-        console.log(item);
+        console.log(item.full_name);
         return item;
     });
     
@@ -88,7 +88,8 @@ var arr3 = ["apple","orange","apple","orange","pear","orange"];
 
 function getWordCnt(){
     return arr3.reduce(function(prev,next){
-        prev[next] = (prev[next] + 1) || 1;
+        // prev[next] = (prev[next] + 1) || 1;
+        prev[next] = (prev[next] || 0) + 1;
         return prev;
     },{});
 }
