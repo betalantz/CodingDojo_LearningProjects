@@ -1,6 +1,8 @@
-function Node(data) {
-  this.data = data;
-  this.next = null;
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
 }
 
 class SinglyLinkedList {
@@ -38,6 +40,27 @@ class SinglyLinkedList {
       } else {
         previous = current;
       }
+      current = current.next;
+    }
+  }
+  dedup() {
+    let arr = []
+    let previous = this.head;
+    let current = this.head;
+    arr.push(current.data)
+    previous = current;
+    current = current.next;
+    while(current) {
+      if(arr.indexOf(current.data)>-1) {
+        if(current === this.tail) {
+          this.tail = previous;
+        }
+        previous.next = current.next;
+        this.numberOfValues--;
+      } else {
+        previous = current;
+      }
+      arr.push(current.data)
       current = current.next;
     }
   }
@@ -120,3 +143,9 @@ singlyLinkedList.traverse(node => { node.data = node.data + 10; });
 singlyLinkedList.print(); // => 12 13 14 15 16 17 18
 singlyLinkedList.traverse(node => { console.log(node.data); }); // => 12 13 14 15 16 17 18
 console.log('length is 7:', singlyLinkedList.length()); // => 7
+singlyLinkedList.add(13)
+singlyLinkedList.insertAfter(12, 14);
+singlyLinkedList.insertAfter(18, 15)
+singlyLinkedList.print()
+singlyLinkedList.dedup()
+singlyLinkedList.print()
