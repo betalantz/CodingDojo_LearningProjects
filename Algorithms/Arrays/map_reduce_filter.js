@@ -19,8 +19,8 @@ function dedup_filter(arr){
 }
 console.log(dedup_filter(arr1));
 
-// map(): for translating/mapping all elems in arr to another set of values
-// array.map(function(currentValue, index, arr), thisValue) #index, arr, and thisValue are optional
+// map(): for translating/ping all elems in arr to another set of values
+// array.(function(currentValue, index, arr), thisValue) #index, arr, and thisValue are optional
 var temps_F = [0, 32, 45, 50, 75, 80, 99, 120];
 
 function convertFtoC(fahrenheit){
