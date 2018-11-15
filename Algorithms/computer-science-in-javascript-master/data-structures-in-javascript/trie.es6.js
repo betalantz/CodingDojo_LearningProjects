@@ -195,3 +195,5 @@ trie.remove('one');
 console.log('trie contains one is false:', trie.contains('one')); // => false
 console.log('trie count words is 3:', trie.countWords()); // => 3
 console.log('words are two, fifth, fifty:', trie.getWords()); // => [ 'two', 'fifth', 'fifty' ]
+const myTrie = JSON.stringify(trie)
+console.log(myTrie);
