@@ -13,7 +13,7 @@ for (var i in marks){
         highscore = marks[i]
     }
 }
-console.log(highscore);
+console.log(`Highscore: ${highscore}`);
 console.log(Object.values(marks));
 console.log(Object.keys(marks));
 
