@@ -27,3 +27,10 @@ function getPerimeter(length, width) {
 }
 console.log(getArea(2, 3));
 console.log(getPerimeter(2, 3));
+
+function factorial(n){
+    if (n > 1) {
+        return n * factorial(n-1)
+    }
+    return 1
+}
