@@ -34,3 +34,13 @@ function factorial(n){
     }
     return 1
 }
+console.log(factorial(5));
+
+const PI = Math.PI
+const r = 2.6
+let area = PI*r**2
+let perimeter = 2*PI*r
+// Print the area of the circle:
+console.log(area)
+// Print the perimeter of the circle:
+console.log(perimeter)
