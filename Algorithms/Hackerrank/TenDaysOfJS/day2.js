@@ -40,3 +40,35 @@ function getGrade(score) {
     return grade;
 }
 console.log(getGrade(11));
+
+function getLetter(s) {
+    let letter;
+    let val = s[0];
+    const setA = /[aieou]/i
+    const setB = /[bcdfg]/i
+    const setC = /[hjklm]/i
+    const setD = /[npqrstvwxyz]/i
+    switch (true) {
+        case setA.test(val):
+            letter = 'A'
+            break
+        case setB.test(val):
+            letter = 'B'
+            break
+        case setC.test(val):
+            letter = 'C'
+            break
+        case setD.test(val):
+            letter = 'D'
+            break
+    }
+    return letter;
+}
+const str = 'adfgt'
+const str1 = 'fiosn'
+const str2 = 'mushi'
+const str3 = 'zeta'
+console.log(getLetter(str));
+console.log(getLetter(str1));
+console.log(getLetter(str2));
+console.log(getLetter(str3));
