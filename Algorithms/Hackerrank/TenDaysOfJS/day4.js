@@ -39,3 +39,21 @@ console.log(rect1.length);
 console.log(rect1.width);
 console.log(rect1.perimeter);
 console.log(rect1.area);
+
+function getCount(objects) {
+    let count = 0
+    objects.forEach((o) => {
+        if (o.x == o.y) { count++ }
+    })
+    return count
+}
+const obj0 = [ 
+    { x: 1, y: 1 },
+    { x: 2, y: 3 },
+    { x: 3, y: 3 },
+    { x: 3, y: 4 },
+    { x: 4, y: 5 },
+    { x: 9, y: 9 }
+]
+console.log(getCount(obj0));
+   
