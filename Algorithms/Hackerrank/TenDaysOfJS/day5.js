@@ -15,3 +15,22 @@ function rectTemplateLiteral(s1, s2) {
 }
 rectTemplateLiteral(10, 14)
 rectTemplateLiteral(15, 8)
+
+// Arrow functions
+function modifyArray(nums) {
+    nums.forEach((n, i) => {
+        if (n%2==0){
+            nums[i] = n*2
+        } else {
+            nums[i] = n*3
+        }
+    })
+    return nums
+}
+// the seecond solution below is very consise, but .map() returns a new array; we want to modify the given array
+function modifyArray2(nums) {
+    return nums.map(n => n = (n%2) ? n*3: n*2);   
+}
+const n = [1,2,3,4,5]
+modifyArray2(n);
+console.log(n);
