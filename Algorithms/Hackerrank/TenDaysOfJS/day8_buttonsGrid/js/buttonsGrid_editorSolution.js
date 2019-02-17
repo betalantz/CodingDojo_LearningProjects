@@ -7,6 +7,7 @@ container.id = 'btns';
 
 /* Create an array of references to the buttons */
 var buttons = [9];
+console.log(buttons);
 for (var i = 0; i < 9; i++) {
     /* Create a button */
     buttons[i] = document.createElement('button');
@@ -16,6 +17,7 @@ for (var i = 0; i < 9; i++) {
     buttons[i].innerHTML = (i + 1);
     /* Set the button's style class */
     buttons[i].className = 'button';
+    console.log(buttons[i]);
     /* Add button to div container */
     container.appendChild(buttons[i]);
 }

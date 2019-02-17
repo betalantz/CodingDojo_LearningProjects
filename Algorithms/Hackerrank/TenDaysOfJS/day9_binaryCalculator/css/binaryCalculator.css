@@ -8,6 +8,9 @@ body {
     font-size: 20px;
 }
 #btns {
+    width: 100%;
+}
+[id^='btn'] {
     width: 25%;
     height: 36px;
     font-size: 18px;

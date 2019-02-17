@@ -4,12 +4,13 @@ const buttonsContainer = document.createElement('div')
 buttonsContainer.id = 'btns'
 const operators = ['+', '-', '*', '-']
 const row1 = ['0', '1', 'C', '=']
-const buttons = [...row1, ...operators]
+const labels = [...row1, ...operators]
 const ids = ['0', '1', 'Clr', 'Eql', 'Sum', 'Sub', 'Mul', 'Div']
+const buttons = []
 for (let i = 0; i < 8; i++){
     buttons[i] = document.createElement('button')
     buttons[i].id = 'btn' + ids[i]
-    buttons[i].innerHTML = buttons[i]
+    buttons[i].innerHTML = labels[i]
     switch(i) {
         case 0:
         case 1:
