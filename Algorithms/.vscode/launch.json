@@ -2,6 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${file}",
+            "outFiles": []
+        },
+        {
             "name": "Python",
             "type": "python",
             "request": "launch",
@@ -18,9 +26,10 @@
         {
             "name": "Launch",
             "type": "node",
+            "protocol": "inspector",
             "request": "launch",
             "program": "${file}",
-            "stopOnEntry": false,
+            "stopOnEntry": true,
             "args": [],
             "cwd": "${fileDirname}",
             "runtimeExecutable": null,
@@ -31,7 +40,7 @@
                 "NODE_ENV": "development"
             },
             "console": "internalConsole",
-            "sourceMaps": false,
+            "sourceMaps": true,
             "outFiles": []
         }
     ]
