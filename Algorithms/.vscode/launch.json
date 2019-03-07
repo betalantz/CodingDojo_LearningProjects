@@ -20,7 +20,7 @@
             "type": "node",
             "request": "launch",
             "program": "${file}",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "args": [],
             "cwd": "${fileDirname}",
             "runtimeExecutable": null,
